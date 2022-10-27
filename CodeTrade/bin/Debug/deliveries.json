@@ -1,0 +1,10 @@
+[
+  {
+    "id": 0,
+    "PickupPosName": "HDMS Bezdek",
+    "GoodsName": "Agricium",
+    "DestinationPosName": "Lorville TDD",
+    "BuyPrice": 100000,
+    "SellPrice": 200000
+  }
+]
