@@ -67,6 +67,7 @@ namespace CodeTrade
             public string PickupPosName;
             public string GoodsName;
             public string DestinationPosName;
+            public string DeliveryDate;
             public int BuyPrice;
             public int SellPrice;
         }

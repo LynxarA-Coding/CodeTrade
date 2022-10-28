@@ -30,12 +30,12 @@
         {
             this.components = new System.ComponentModel.Container();
             this.pnlHeader = new System.Windows.Forms.Panel();
+            this.lblTitle = new System.Windows.Forms.Label();
+            this.btnHide = new System.Windows.Forms.PictureBox();
+            this.btnExit = new System.Windows.Forms.PictureBox();
             this.pnlMain = new System.Windows.Forms.Panel();
             this.dragHeader = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.elipse = new Guna.UI2.WinForms.Guna2Elipse(this.components);
-            this.btnHide = new System.Windows.Forms.PictureBox();
-            this.btnExit = new System.Windows.Forms.PictureBox();
-            this.lblTitle = new System.Windows.Forms.Label();
             this.pnlHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnHide)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnExit)).BeginInit();
@@ -43,6 +43,7 @@
             // 
             // pnlHeader
             // 
+            this.pnlHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(4)))), ((int)(((byte)(14)))));
             this.pnlHeader.Controls.Add(this.lblTitle);
             this.pnlHeader.Controls.Add(this.btnHide);
             this.pnlHeader.Controls.Add(this.btnExit);
@@ -52,22 +53,16 @@
             this.pnlHeader.Size = new System.Drawing.Size(950, 56);
             this.pnlHeader.TabIndex = 0;
             // 
-            // pnlMain
+            // lblTitle
             // 
-            this.pnlMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlMain.Location = new System.Drawing.Point(0, 56);
-            this.pnlMain.Name = "pnlMain";
-            this.pnlMain.Size = new System.Drawing.Size(950, 544);
-            this.pnlMain.TabIndex = 1;
-            // 
-            // dragHeader
-            // 
-            this.dragHeader.TargetControl = this.pnlHeader;
-            // 
-            // elipse
-            // 
-            this.elipse.BorderRadius = 25;
-            this.elipse.TargetControl = this;
+            this.lblTitle.AutoSize = true;
+            this.lblTitle.Font = new System.Drawing.Font("Calibri", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
+            this.lblTitle.Location = new System.Drawing.Point(12, 9);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(165, 39);
+            this.lblTitle.TabIndex = 1;
+            this.lblTitle.Text = "CODΞTrade";
             // 
             // btnHide
             // 
@@ -93,22 +88,28 @@
             this.btnExit.TabStop = false;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
-            // lblTitle
+            // pnlMain
             // 
-            this.lblTitle.AutoSize = true;
-            this.lblTitle.Font = new System.Drawing.Font("Calibri", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
-            this.lblTitle.Location = new System.Drawing.Point(12, 9);
-            this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(165, 39);
-            this.lblTitle.TabIndex = 1;
-            this.lblTitle.Text = "CODΞTrade";
+            this.pnlMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlMain.Location = new System.Drawing.Point(0, 56);
+            this.pnlMain.Name = "pnlMain";
+            this.pnlMain.Size = new System.Drawing.Size(950, 544);
+            this.pnlMain.TabIndex = 1;
+            // 
+            // dragHeader
+            // 
+            this.dragHeader.TargetControl = this.pnlHeader;
+            // 
+            // elipse
+            // 
+            this.elipse.BorderRadius = 25;
+            this.elipse.TargetControl = this;
             // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(4)))), ((int)(((byte)(14)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
             this.ClientSize = new System.Drawing.Size(950, 600);
             this.Controls.Add(this.pnlMain);
             this.Controls.Add(this.pnlHeader);

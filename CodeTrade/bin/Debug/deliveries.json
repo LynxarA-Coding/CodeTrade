@@ -3,8 +3,45 @@
     "id": 0,
     "PickupPosName": "HDMS Bezdek",
     "GoodsName": "Agricium",
-    "DestinationPosName": "Lorville TDD",
-    "BuyPrice": 100000,
-    "SellPrice": 200000
+    "DestinationPosName": "Port Olisar",
+    "DeliveryDate": "10/5/2020",
+    "BuyPrice": 428130,
+    "SellPrice": 200781
+  },
+  {
+    "id": 1,
+    "PickupPosName": "HDMS Bezdek",
+    "GoodsName": "Agricium",
+    "DestinationPosName": "Port Olisar",
+    "DeliveryDate": "11/6/2021",
+    "BuyPrice": 32938,
+    "SellPrice": 3314537
+  },
+  {
+    "id": 2,
+    "PickupPosName": "HDMS Bezdek",
+    "GoodsName": "Agricium",
+    "DestinationPosName": "Port Olisar",
+    "DeliveryDate": "12/7/2022",
+    "BuyPrice": 2157844,
+    "SellPrice": 2468523
+  },
+  {
+    "id": 3,
+    "PickupPosName": "HDMS Bezdek",
+    "GoodsName": "Agricium",
+    "DestinationPosName": "Port Olisar",
+    "DeliveryDate": "13/8/2023",
+    "BuyPrice": 3016772,
+    "SellPrice": 4203867
+  },
+  {
+    "id": 4,
+    "PickupPosName": "HDMS Bezdek",
+    "GoodsName": "Agricium",
+    "DestinationPosName": "Port Olisar",
+    "DeliveryDate": "14/9/2024",
+    "BuyPrice": 2319487,
+    "SellPrice": 51838
   }
 ]

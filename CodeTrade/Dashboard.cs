@@ -37,6 +37,7 @@ namespace CodeTrade
                     PageDashboard page = new PageDashboard() { Owner = this };
                     page.TopLevel = false;
                     pnlPage.Controls.Add(page);
+                    page.Deliveries = Deliveries;
                     page.Show();
                     Buttons[0].FillColor = ColorTranslator.FromHtml("#800E13");
                     this.Owner.Text = "CodeTrade | Панель";
@@ -107,6 +108,7 @@ namespace CodeTrade
         {
             if (MenuState)
             {
+                lblCopyright.Visible = false;
                 btnMenuToggle.Image = Properties.Resources.right_arrow;
                 menuTransition.MaxAnimationTime = 1500;
                 menuTransition.HideSync(pnlMenu);
@@ -129,7 +131,9 @@ namespace CodeTrade
                     btn.Visible = true;
                     btn.Enabled = true;
                 }
-                
+
+                lblCopyright.Visible = true;
+
                 btnMenuToggle.Image = Properties.Resources.left_arrow;
                 menuTransition.MaxAnimationTime = 0;
                 menuTransition.HideSync(pnlMenu);
