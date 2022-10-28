@@ -59,9 +59,9 @@
             this.lblData.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblData.Location = new System.Drawing.Point(497, 2);
             this.lblData.Name = "lblData";
-            this.lblData.Size = new System.Drawing.Size(180, 19);
+            this.lblData.Size = new System.Drawing.Size(189, 19);
             this.lblData.TabIndex = 2;
-            this.lblData.Text = "Последние 5 Маршрута:";
+            this.lblData.Text = "Последние 5 Маршрутов:";
             // 
             // lblTotal
             // 

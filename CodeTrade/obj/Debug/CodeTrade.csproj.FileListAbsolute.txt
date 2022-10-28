@@ -1,7 +1,6 @@
 C:\Users\ASUS\Documents\repo\projects\CodeTrade\CodeTrade\bin\Debug\CodeTrade.exe.config
 C:\Users\ASUS\Documents\repo\projects\CodeTrade\CodeTrade\bin\Debug\CodeTrade.exe
 C:\Users\ASUS\Documents\repo\projects\CodeTrade\CodeTrade\bin\Debug\CodeTrade.pdb
-C:\Users\ASUS\Documents\repo\projects\CodeTrade\CodeTrade\bin\Debug\Guna.UI2.dll
 C:\Users\ASUS\Documents\repo\projects\CodeTrade\CodeTrade\obj\Debug\CodeTrade.csproj.AssemblyReference.cache
 C:\Users\ASUS\Documents\repo\projects\CodeTrade\CodeTrade\obj\Debug\CodeTrade.csproj.SuggestedBindingRedirects.cache
 C:\Users\ASUS\Documents\repo\projects\CodeTrade\CodeTrade\obj\Debug\CodeTrade.Loading.resources
@@ -17,15 +16,10 @@ C:\Users\ASUS\Documents\repo\projects\CodeTrade\CodeTrade\obj\Debug\CodeTrade.Pa
 C:\Users\ASUS\Documents\repo\projects\CodeTrade\CodeTrade\obj\Debug\CodeTrade.Pages.PageLinks.resources
 C:\Users\ASUS\Documents\repo\projects\CodeTrade\CodeTrade\obj\Debug\CodeTrade.Pages.PageLogs.resources
 C:\Users\ASUS\Documents\repo\projects\CodeTrade\CodeTrade\obj\Debug\CodeTrade.Pages.PageSettings.resources
-C:\Users\ASUS\Documents\repo\projects\CodeTrade\CodeTrade\bin\Debug\Newtonsoft.Json.dll
 C:\Users\ASUS\Documents\repo\projects\CodeTrade\CodeTrade\bin\Debug\Newtonsoft.Json.xml
 C:\Users\ASUS\Documents\repo\projects\CodeTrade\CodeTrade\obj\Debug\CodeTrade.Pages.PageDeliveries.resources
-C:\Users\ASUS\Documents\repo\projects\CodeTrade\CodeTrade\bin\Debug\LiveCharts.dll
-C:\Users\ASUS\Documents\repo\projects\CodeTrade\CodeTrade\bin\Debug\LiveCharts.WinForms.dll
-C:\Users\ASUS\Documents\repo\projects\CodeTrade\CodeTrade\bin\Debug\LiveCharts.Wpf.dll
-C:\Users\ASUS\Documents\repo\projects\CodeTrade\CodeTrade\bin\Debug\LiveCharts.pdb
 C:\Users\ASUS\Documents\repo\projects\CodeTrade\CodeTrade\bin\Debug\LiveCharts.xml
-C:\Users\ASUS\Documents\repo\projects\CodeTrade\CodeTrade\bin\Debug\LiveCharts.WinForms.pdb
 C:\Users\ASUS\Documents\repo\projects\CodeTrade\CodeTrade\bin\Debug\LiveCharts.WinForms.xml
-C:\Users\ASUS\Documents\repo\projects\CodeTrade\CodeTrade\bin\Debug\LiveCharts.Wpf.pdb
 C:\Users\ASUS\Documents\repo\projects\CodeTrade\CodeTrade\bin\Debug\LiveCharts.Wpf.xml
+C:\Users\ASUS\Documents\repo\projects\CodeTrade\CodeTrade\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+C:\Users\ASUS\Documents\repo\projects\CodeTrade\CodeTrade\obj\Debug\CodeTrade.csproj.Fody.CopyLocal.cache
