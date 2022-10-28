@@ -56,6 +56,7 @@
             this.tbLogs.Name = "tbLogs";
             this.tbLogs.PasswordChar = '\0';
             this.tbLogs.PlaceholderText = "";
+            this.tbLogs.ReadOnly = true;
             this.tbLogs.SelectedText = "";
             this.tbLogs.ShadowDecoration.Parent = this.tbLogs;
             this.tbLogs.Size = new System.Drawing.Size(868, 499);
