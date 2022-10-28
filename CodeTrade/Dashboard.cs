@@ -9,7 +9,9 @@ using System.Threading.Tasks;
 using CodeTrade.Pages;
 using System.Windows.Forms;
 using Guna.UI2.WinForms;
+using Newtonsoft.Json;
 using Guna.UI2.WinForms.Helpers;
+using System.Windows.Markup;
 
 namespace CodeTrade
 {
@@ -23,8 +25,21 @@ namespace CodeTrade
         private bool MenuState = true;
         private List<Guna2TileButton> Buttons = new List<Guna2TileButton>();
         private int PreviousBtn = 0;
-        
+
         public List<Data.Delivery> Deliveries = new List<Data.Delivery>();
+        public List<string[]> Locations = new List<string[]>();
+
+        public void SaveDeliveries()
+        {
+            string json = JsonConvert.SerializeObject(Deliveries, Formatting.Indented);
+
+            if (System.IO.File.Exists("deliveries.json"))
+            {
+                System.IO.File.Delete("deliveries.json");
+            }
+
+            System.IO.File.WriteAllText("deliveries.json", json);
+        }
 
         private void OpenPage(int pagenum)
         {
@@ -49,6 +64,7 @@ namespace CodeTrade
                     PageDeliveries page1 = new PageDeliveries() { Owner = this };
                     page1.TopLevel = false;
                     page1.Deliveries = Deliveries;
+                    page1.Locations = Locations;
                     pnlPage.Controls.Add(page1);
                     page1.Show();
                     Buttons[1].FillColor = ColorTranslator.FromHtml("#800E13");
@@ -98,7 +114,7 @@ namespace CodeTrade
             Buttons.Add(btnLinks);
             Buttons.Add(btnLogs);
             Buttons.Add(btnSettings);
-            
+
             btnMenuToggle.Top = (pnlMenu.Height - btnMenuToggle.Height) / 2;
 
             OpenPage(0);

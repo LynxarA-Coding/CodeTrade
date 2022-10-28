@@ -16,5 +16,17 @@ namespace CodeTrade.Pages
         {
             InitializeComponent();
         }
+
+        private void btnDeleteData_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Вы точно хотите удалить все данные?", "Удаление Данных", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                Dashboard dashboard = (Dashboard)this.Owner;
+                List<Data.Delivery> deliveries = new List<Data.Delivery>();
+                dashboard.Deliveries = deliveries;
+                dashboard.SaveDeliveries();
+            }
+            
+        }
     }
 }

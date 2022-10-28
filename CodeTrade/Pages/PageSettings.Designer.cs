@@ -28,17 +28,36 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
+            this.btnDeleteData = new Guna.UI2.WinForms.Guna2TileButton();
+            this.lblDeleteData = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // label1
+            // btnDeleteData
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(443, 258);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(13, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "3";
+            this.btnDeleteData.BorderRadius = 6;
+            this.btnDeleteData.BorderThickness = 2;
+            this.btnDeleteData.CheckedState.Parent = this.btnDeleteData;
+            this.btnDeleteData.CustomImages.Parent = this.btnDeleteData;
+            this.btnDeleteData.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
+            this.btnDeleteData.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeleteData.ForeColor = System.Drawing.Color.Black;
+            this.btnDeleteData.HoverState.Parent = this.btnDeleteData;
+            this.btnDeleteData.Location = new System.Drawing.Point(471, 459);
+            this.btnDeleteData.Name = "btnDeleteData";
+            this.btnDeleteData.ShadowDecoration.Parent = this.btnDeleteData;
+            this.btnDeleteData.Size = new System.Drawing.Size(415, 43);
+            this.btnDeleteData.TabIndex = 4;
+            this.btnDeleteData.Text = "УДАЛИТЬ ДАННЫЕ";
+            this.btnDeleteData.Click += new System.EventHandler(this.btnDeleteData_Click);
+            // 
+            // lblDeleteData
+            // 
+            this.lblDeleteData.AutoSize = true;
+            this.lblDeleteData.Location = new System.Drawing.Point(468, 505);
+            this.lblDeleteData.Name = "lblDeleteData";
+            this.lblDeleteData.Size = new System.Drawing.Size(419, 13);
+            this.lblDeleteData.TabIndex = 5;
+            this.lblDeleteData.Text = "Удаляет все логированные маршруты за всё время (невозможно восстановить)";
             // 
             // PageSettings
             // 
@@ -46,7 +65,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
             this.ClientSize = new System.Drawing.Size(898, 529);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblDeleteData);
+            this.Controls.Add(this.btnDeleteData);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "PageSettings";
             this.Text = "PageSettings";
@@ -57,6 +77,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
+        private Guna.UI2.WinForms.Guna2TileButton btnDeleteData;
+        private System.Windows.Forms.Label lblDeleteData;
     }
 }

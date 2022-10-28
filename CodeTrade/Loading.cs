@@ -28,27 +28,6 @@ namespace CodeTrade
                 Data data = new Data();
                 data.Deliveries = new List<Data.Delivery>();
 
-                Random rnd = new Random();
-                for (int i = 0; i < 5; i++)
-                {
-                    Data.Delivery delivery = new Data.Delivery();
-                    delivery.id = i;
-                    delivery.PickupPosName = "HDMS Bezdek";
-                    delivery.GoodsName = "Agricium";
-                    delivery.DestinationPosName = "Port Olisar";
-
-                    int day = 10 + i;
-                    int month = 5 + i;
-                    int year = 2020 + i;
-                    delivery.DeliveryDate = day + "/" + month + "/" + year;
-                    
-                    delivery.BuyPrice = rnd.Next(10000, 5000000);
-                    delivery.SellPrice = rnd.Next(10000, 5000000);
-
-                    data.Deliveries.Add(delivery);
-                }
-                
-
                 string json = JsonConvert.SerializeObject(data.Deliveries, Formatting.Indented);
 
                 File.WriteAllText("deliveries.json", json);
