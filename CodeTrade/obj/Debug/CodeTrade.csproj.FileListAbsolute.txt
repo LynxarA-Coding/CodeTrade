@@ -13,7 +13,6 @@ C:\Users\ASUS\Documents\repo\projects\CodeTrade\CodeTrade\obj\Debug\CodeTrade.ex
 C:\Users\ASUS\Documents\repo\projects\CodeTrade\CodeTrade\obj\Debug\CodeTrade.pdb
 C:\Users\ASUS\Documents\repo\projects\CodeTrade\CodeTrade\obj\Debug\CodeTrade.Dashboard.resources
 C:\Users\ASUS\Documents\repo\projects\CodeTrade\CodeTrade\obj\Debug\CodeTrade.Pages.PageDashboard.resources
-C:\Users\ASUS\Documents\repo\projects\CodeTrade\CodeTrade\obj\Debug\CodeTrade.Pages.PageLinks.resources
 C:\Users\ASUS\Documents\repo\projects\CodeTrade\CodeTrade\obj\Debug\CodeTrade.Pages.PageLogs.resources
 C:\Users\ASUS\Documents\repo\projects\CodeTrade\CodeTrade\obj\Debug\CodeTrade.Pages.PageSettings.resources
 C:\Users\ASUS\Documents\repo\projects\CodeTrade\CodeTrade\bin\Debug\Newtonsoft.Json.xml

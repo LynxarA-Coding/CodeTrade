@@ -31,16 +31,15 @@
             Guna.UI2.AnimatorNS.Animation animation1 = new Guna.UI2.AnimatorNS.Animation();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
             this.pnlMenu = new Guna.UI2.WinForms.Guna2Panel();
+            this.lblCopyright = new System.Windows.Forms.Label();
             this.btnSettings = new Guna.UI2.WinForms.Guna2TileButton();
             this.btnLogs = new Guna.UI2.WinForms.Guna2TileButton();
-            this.btnLinks = new Guna.UI2.WinForms.Guna2TileButton();
             this.btnDeliveries = new Guna.UI2.WinForms.Guna2TileButton();
             this.btnDashboard = new Guna.UI2.WinForms.Guna2TileButton();
             this.btnToggleMenu = new Guna.UI2.WinForms.Guna2Panel();
             this.btnMenuToggle = new System.Windows.Forms.PictureBox();
             this.menuTransition = new Guna.UI2.WinForms.Guna2Transition();
             this.pnlPage = new Guna.UI2.WinForms.Guna2Panel();
-            this.lblCopyright = new System.Windows.Forms.Label();
             this.pnlMenu.SuspendLayout();
             this.btnToggleMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMenuToggle)).BeginInit();
@@ -54,7 +53,6 @@
             this.pnlMenu.Controls.Add(this.lblCopyright);
             this.pnlMenu.Controls.Add(this.btnSettings);
             this.pnlMenu.Controls.Add(this.btnLogs);
-            this.pnlMenu.Controls.Add(this.btnLinks);
             this.pnlMenu.Controls.Add(this.btnDeliveries);
             this.pnlMenu.Controls.Add(this.btnDashboard);
             this.pnlMenu.Controls.Add(this.btnToggleMenu);
@@ -65,6 +63,17 @@
             this.pnlMenu.ShadowDecoration.Parent = this.pnlMenu;
             this.pnlMenu.Size = new System.Drawing.Size(195, 544);
             this.pnlMenu.TabIndex = 0;
+            // 
+            // lblCopyright
+            // 
+            this.lblCopyright.AutoSize = true;
+            this.menuTransition.SetDecoration(this.lblCopyright, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.lblCopyright.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCopyright.Location = new System.Drawing.Point(1, 528);
+            this.lblCopyright.Name = "lblCopyright";
+            this.lblCopyright.Size = new System.Drawing.Size(153, 13);
+            this.lblCopyright.TabIndex = 0;
+            this.lblCopyright.Text = "by LynX @2022 | CODEGAMING";
             // 
             // btnSettings
             // 
@@ -79,7 +88,7 @@
             this.btnSettings.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSettings.ForeColor = System.Drawing.Color.Black;
             this.btnSettings.HoverState.Parent = this.btnSettings;
-            this.btnSettings.Location = new System.Drawing.Point(3, 211);
+            this.btnSettings.Location = new System.Drawing.Point(3, 159);
             this.btnSettings.Name = "btnSettings";
             this.btnSettings.ShadowDecoration.Parent = this.btnSettings;
             this.btnSettings.Size = new System.Drawing.Size(152, 46);
@@ -100,34 +109,13 @@
             this.btnLogs.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogs.ForeColor = System.Drawing.Color.Black;
             this.btnLogs.HoverState.Parent = this.btnLogs;
-            this.btnLogs.Location = new System.Drawing.Point(3, 159);
+            this.btnLogs.Location = new System.Drawing.Point(3, 107);
             this.btnLogs.Name = "btnLogs";
             this.btnLogs.ShadowDecoration.Parent = this.btnLogs;
             this.btnLogs.Size = new System.Drawing.Size(152, 46);
             this.btnLogs.TabIndex = 1;
             this.btnLogs.Text = "ЛОГИ";
             this.btnLogs.Click += new System.EventHandler(this.btnLogs_Click);
-            // 
-            // btnLinks
-            // 
-            this.btnLinks.BackColor = System.Drawing.Color.Transparent;
-            this.btnLinks.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(14)))), ((int)(((byte)(19)))));
-            this.btnLinks.BorderRadius = 5;
-            this.btnLinks.BorderThickness = 2;
-            this.btnLinks.CheckedState.Parent = this.btnLinks;
-            this.btnLinks.CustomImages.Parent = this.btnLinks;
-            this.menuTransition.SetDecoration(this.btnLinks, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.btnLinks.FillColor = System.Drawing.Color.Transparent;
-            this.btnLinks.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLinks.ForeColor = System.Drawing.Color.Black;
-            this.btnLinks.HoverState.Parent = this.btnLinks;
-            this.btnLinks.Location = new System.Drawing.Point(3, 107);
-            this.btnLinks.Name = "btnLinks";
-            this.btnLinks.ShadowDecoration.Parent = this.btnLinks;
-            this.btnLinks.Size = new System.Drawing.Size(152, 46);
-            this.btnLinks.TabIndex = 1;
-            this.btnLinks.Text = "ССЫЛКИ";
-            this.btnLinks.Click += new System.EventHandler(this.btnLinks_Click);
             // 
             // btnDeliveries
             // 
@@ -230,17 +218,6 @@
             this.pnlPage.Size = new System.Drawing.Size(898, 529);
             this.pnlPage.TabIndex = 1;
             // 
-            // lblCopyright
-            // 
-            this.lblCopyright.AutoSize = true;
-            this.menuTransition.SetDecoration(this.lblCopyright, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.lblCopyright.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCopyright.Location = new System.Drawing.Point(1, 528);
-            this.lblCopyright.Name = "lblCopyright";
-            this.lblCopyright.Size = new System.Drawing.Size(153, 13);
-            this.lblCopyright.TabIndex = 0;
-            this.lblCopyright.Text = "by LynX @2022 | CODEGAMING";
-            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -269,7 +246,6 @@
         private Guna.UI2.WinForms.Guna2Transition menuTransition;
         private System.Windows.Forms.PictureBox btnMenuToggle;
         private Guna.UI2.WinForms.Guna2TileButton btnDashboard;
-        private Guna.UI2.WinForms.Guna2TileButton btnLinks;
         private Guna.UI2.WinForms.Guna2TileButton btnLogs;
         private Guna.UI2.WinForms.Guna2TileButton btnSettings;
         private Guna.UI2.WinForms.Guna2Panel pnlPage;

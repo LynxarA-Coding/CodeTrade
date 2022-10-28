@@ -133,7 +133,7 @@
         private System.Windows.Forms.PictureBox btnExit;
         private Guna.UI2.WinForms.Guna2Elipse elipse;
         private System.Windows.Forms.PictureBox btnHide;
-        private System.Windows.Forms.Label lblTitle;
+        public System.Windows.Forms.Label lblTitle;
     }
 }
 

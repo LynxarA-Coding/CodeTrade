@@ -37,6 +37,7 @@ namespace CodeTrade
         private void Loading_Load(object sender, EventArgs e)
         {
             lblLoading.Left = (this.Width - lblLoading.Width) / 2;
+            pictureBox1.Left = (this.Width - pictureBox1.Width) / 2;
             pBar.Value = 0;
             loadTimer.Start();
         }

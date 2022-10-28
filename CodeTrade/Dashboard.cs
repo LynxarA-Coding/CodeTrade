@@ -55,7 +55,9 @@ namespace CodeTrade
                     page.Deliveries = Deliveries;
                     page.Show();
                     Buttons[0].FillColor = ColorTranslator.FromHtml("#800E13");
-                    this.Owner.Text = "CodeTrade | Панель";
+                    Main own = (Main)this.Owner;
+                    own.Text = "CodeTrade | Панель";
+                    own.lblTitle.Text = "CODΞTrade | Панель";
                     break;
                 case 1:
                     pnlPage.Controls.Clear();
@@ -68,40 +70,36 @@ namespace CodeTrade
                     pnlPage.Controls.Add(page1);
                     page1.Show();
                     Buttons[1].FillColor = ColorTranslator.FromHtml("#800E13");
-                    this.Owner.Text = "CodeTrade | Доставки";
+                    Main own1 = (Main)this.Owner;
+                    own1.Text = "CodeTrade | Доставки";
+                    own1.lblTitle.Text = "CODΞTrade | Доставки";
                     break;
                 case 2:
                     pnlPage.Controls.Clear();
                     Buttons[PreviousBtn].FillColor = Color.Transparent;
                     PreviousBtn = 2;
-                    PageLinks page2 = new PageLinks() { Owner = this };
+                    PageLogs page2 = new PageLogs() { Owner = this };
                     page2.TopLevel = false;
                     pnlPage.Controls.Add(page2);
+                    page2.Deliveries = Deliveries;
                     page2.Show();
                     Buttons[2].FillColor = ColorTranslator.FromHtml("#800E13");
-                    this.Owner.Text = "CodeTrade | Ссылки";
+                    Main own2 = (Main)this.Owner;
+                    own2.Text = "CodeTrade | Логи";
+                    own2.lblTitle.Text = "CODΞTrade | Логи";
                     break;
                 case 3:
                     pnlPage.Controls.Clear();
                     Buttons[PreviousBtn].FillColor = Color.Transparent;
                     PreviousBtn = 3;
-                    PageLogs page3 = new PageLogs() { Owner = this };
+                    PageSettings page3 = new PageSettings() { Owner = this };
                     page3.TopLevel = false;
                     pnlPage.Controls.Add(page3);
                     page3.Show();
                     Buttons[3].FillColor = ColorTranslator.FromHtml("#800E13");
-                    this.Owner.Text = "CodeTrade | Логи";
-                    break;
-                case 4:
-                    pnlPage.Controls.Clear();
-                    Buttons[PreviousBtn].FillColor = Color.Transparent;
-                    PreviousBtn = 4;
-                    PageSettings page4 = new PageSettings() { Owner = this };
-                    page4.TopLevel = false;
-                    pnlPage.Controls.Add(page4);
-                    page4.Show();
-                    Buttons[4].FillColor = ColorTranslator.FromHtml("#800E13");
-                    this.Owner.Text = "CodeTrade | Настройки";
+                    Main own3 = (Main)this.Owner;
+                    own3.Text = "CodeTrade | Настройки";
+                    own3.lblTitle.Text = "CODΞTrade | Настройки";
                     break;
             }
         }
@@ -111,7 +109,6 @@ namespace CodeTrade
             Buttons.Clear();
             Buttons.Add(btnDashboard);
             Buttons.Add(btnDeliveries);
-            Buttons.Add(btnLinks);
             Buttons.Add(btnLogs);
             Buttons.Add(btnSettings);
 
@@ -178,7 +175,7 @@ namespace CodeTrade
             }
         }
 
-        private void btnLinks_Click(object sender, EventArgs e)
+        private void btnLogs_Click(object sender, EventArgs e)
         {
             if (PreviousBtn != 2)
             {
@@ -186,19 +183,11 @@ namespace CodeTrade
             }
         }
 
-        private void btnLogs_Click(object sender, EventArgs e)
+        private void btnSettings_Click(object sender, EventArgs e)
         {
             if (PreviousBtn != 3)
             {
                 OpenPage(3);
-            }
-        }
-
-        private void btnSettings_Click(object sender, EventArgs e)
-        {
-            if (PreviousBtn != 4)
-            {
-                OpenPage(4);
             }
         }
     }
