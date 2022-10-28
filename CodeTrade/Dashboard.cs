@@ -45,20 +45,6 @@ namespace CodeTrade
         {
             switch (pagenum)
             {
-                case 0:
-                    pnlPage.Controls.Clear();
-                    Buttons[PreviousBtn].FillColor = Color.Transparent;
-                    PreviousBtn = 0;
-                    PageDashboard page = new PageDashboard() { Owner = this };
-                    page.TopLevel = false;
-                    pnlPage.Controls.Add(page);
-                    page.Deliveries = Deliveries;
-                    page.Show();
-                    Buttons[0].FillColor = ColorTranslator.FromHtml("#800E13");
-                    Main own = (Main)this.Owner;
-                    own.Text = "CodeTrade | Панель";
-                    own.lblTitle.Text = "CODΞTrade | Панель";
-                    break;
                 case 1:
                     pnlPage.Controls.Clear();
                     Buttons[PreviousBtn].FillColor = Color.Transparent;
@@ -100,6 +86,20 @@ namespace CodeTrade
                     Main own3 = (Main)this.Owner;
                     own3.Text = "CodeTrade | Настройки";
                     own3.lblTitle.Text = "CODΞTrade | Настройки";
+                    break;
+                default:
+                    pnlPage.Controls.Clear();
+                    Buttons[PreviousBtn].FillColor = Color.Transparent;
+                    PreviousBtn = 0;
+                    PageDashboard page = new PageDashboard() { Owner = this };
+                    page.TopLevel = false;
+                    pnlPage.Controls.Add(page);
+                    page.Deliveries = Deliveries;
+                    page.Show();
+                    Buttons[0].FillColor = ColorTranslator.FromHtml("#800E13");
+                    Main own = (Main)this.Owner;
+                    own.Text = "CodeTrade | Панель";
+                    own.lblTitle.Text = "CODΞTrade | Панель";
                     break;
             }
         }

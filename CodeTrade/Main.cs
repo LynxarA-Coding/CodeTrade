@@ -174,10 +174,12 @@ namespace CodeTrade
 
         private List<Data.Delivery> SetDeliveries()
         {
-            List<Data.Delivery> deliveries = new List<Data.Delivery>();
+            List<Data.Delivery> deliveries;
 
             StreamReader sr = new StreamReader("deliveries.json");
             string json = sr.ReadToEnd();
+            sr.Close();
+            sr.Dispose();
 
             deliveries = JsonConvert.DeserializeObject<List<Data.Delivery>>(json);
 
