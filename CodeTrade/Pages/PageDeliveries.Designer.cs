@@ -44,11 +44,12 @@
             this.lblBuying = new System.Windows.Forms.Label();
             this.pnlBuying = new Guna.UI2.WinForms.Guna2Panel();
             this.pnlSelling = new Guna.UI2.WinForms.Guna2Panel();
-            this.lblSelling = new System.Windows.Forms.Label();
-            this.cbPlanetary2 = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.cbTradingPlace2 = new Guna.UI2.WinForms.Guna2ComboBox();
             this.lblPlanetary2 = new System.Windows.Forms.Label();
             this.lblTradingPlace2 = new System.Windows.Forms.Label();
-            this.cbTradingPlace2 = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.cbPlanetary2 = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.lblSelling = new System.Windows.Forms.Label();
+            this.btnCalculator = new Guna.UI2.WinForms.Guna2TileButton();
             this.pnlBuying.SuspendLayout();
             this.pnlSelling.SuspendLayout();
             this.SuspendLayout();
@@ -147,7 +148,7 @@
             this.tbCargoName.ForeColor = System.Drawing.Color.Black;
             this.tbCargoName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbCargoName.HoverState.Parent = this.tbCargoName;
-            this.tbCargoName.Location = new System.Drawing.Point(18, 465);
+            this.tbCargoName.Location = new System.Drawing.Point(18, 474);
             this.tbCargoName.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.tbCargoName.Name = "tbCargoName";
             this.tbCargoName.PasswordChar = '\0';
@@ -162,7 +163,7 @@
             // 
             this.lblCargo.AutoSize = true;
             this.lblCargo.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCargo.Location = new System.Drawing.Point(13, 434);
+            this.lblCargo.Location = new System.Drawing.Point(13, 443);
             this.lblCargo.Name = "lblCargo";
             this.lblCargo.Size = new System.Drawing.Size(68, 26);
             this.lblCargo.TabIndex = 1;
@@ -278,7 +279,7 @@
             this.btnAdd.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.ForeColor = System.Drawing.Color.Black;
             this.btnAdd.HoverState.Parent = this.btnAdd;
-            this.btnAdd.Location = new System.Drawing.Point(457, 465);
+            this.btnAdd.Location = new System.Drawing.Point(457, 474);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.ShadowDecoration.Parent = this.btnAdd;
             this.btnAdd.Size = new System.Drawing.Size(415, 43);
@@ -332,15 +333,49 @@
             this.pnlSelling.Size = new System.Drawing.Size(861, 173);
             this.pnlSelling.TabIndex = 6;
             // 
-            // lblSelling
+            // cbTradingPlace2
             // 
-            this.lblSelling.AutoSize = true;
-            this.lblSelling.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSelling.Location = new System.Drawing.Point(20, 214);
-            this.lblSelling.Name = "lblSelling";
-            this.lblSelling.Size = new System.Drawing.Size(112, 26);
-            this.lblSelling.TabIndex = 1;
-            this.lblSelling.Text = "ПРОДАЖА:";
+            this.cbTradingPlace2.BackColor = System.Drawing.Color.Transparent;
+            this.cbTradingPlace2.BorderColor = System.Drawing.Color.Black;
+            this.cbTradingPlace2.BorderRadius = 5;
+            this.cbTradingPlace2.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbTradingPlace2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbTradingPlace2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
+            this.cbTradingPlace2.FocusedColor = System.Drawing.Color.Empty;
+            this.cbTradingPlace2.FocusedState.Parent = this.cbTradingPlace2;
+            this.cbTradingPlace2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbTradingPlace2.ForeColor = System.Drawing.Color.Black;
+            this.cbTradingPlace2.FormattingEnabled = true;
+            this.cbTradingPlace2.HoverState.Parent = this.cbTradingPlace2;
+            this.cbTradingPlace2.ItemHeight = 30;
+            this.cbTradingPlace2.Items.AddRange(new object[] {
+            "ВЫБЕРИТЕ ПЛАНЕТАРНУЮ СИСТЕМУ"});
+            this.cbTradingPlace2.ItemsAppearance.Parent = this.cbTradingPlace2;
+            this.cbTradingPlace2.Location = new System.Drawing.Point(270, 39);
+            this.cbTradingPlace2.Name = "cbTradingPlace2";
+            this.cbTradingPlace2.ShadowDecoration.Parent = this.cbTradingPlace2;
+            this.cbTradingPlace2.Size = new System.Drawing.Size(548, 36);
+            this.cbTradingPlace2.TabIndex = 0;
+            // 
+            // lblPlanetary2
+            // 
+            this.lblPlanetary2.AutoSize = true;
+            this.lblPlanetary2.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPlanetary2.Location = new System.Drawing.Point(6, 10);
+            this.lblPlanetary2.Name = "lblPlanetary2";
+            this.lblPlanetary2.Size = new System.Drawing.Size(215, 26);
+            this.lblPlanetary2.TabIndex = 1;
+            this.lblPlanetary2.Text = "Планетарная Система:";
+            // 
+            // lblTradingPlace2
+            // 
+            this.lblTradingPlace2.AutoSize = true;
+            this.lblTradingPlace2.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTradingPlace2.Location = new System.Drawing.Point(265, 10);
+            this.lblTradingPlace2.Name = "lblTradingPlace2";
+            this.lblTradingPlace2.Size = new System.Drawing.Size(150, 26);
+            this.lblTradingPlace2.TabIndex = 1;
+            this.lblTradingPlace2.Text = "Торговая Точка:";
             // 
             // cbPlanetary2
             // 
@@ -374,49 +409,33 @@
             this.cbPlanetary2.TabIndex = 0;
             this.cbPlanetary2.SelectedIndexChanged += new System.EventHandler(this.cbPlanetary2_SelectedIndexChanged);
             // 
-            // lblPlanetary2
+            // lblSelling
             // 
-            this.lblPlanetary2.AutoSize = true;
-            this.lblPlanetary2.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPlanetary2.Location = new System.Drawing.Point(6, 10);
-            this.lblPlanetary2.Name = "lblPlanetary2";
-            this.lblPlanetary2.Size = new System.Drawing.Size(215, 26);
-            this.lblPlanetary2.TabIndex = 1;
-            this.lblPlanetary2.Text = "Планетарная Система:";
+            this.lblSelling.AutoSize = true;
+            this.lblSelling.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSelling.Location = new System.Drawing.Point(20, 214);
+            this.lblSelling.Name = "lblSelling";
+            this.lblSelling.Size = new System.Drawing.Size(112, 26);
+            this.lblSelling.TabIndex = 1;
+            this.lblSelling.Text = "ПРОДАЖА:";
             // 
-            // lblTradingPlace2
+            // btnCalculator
             // 
-            this.lblTradingPlace2.AutoSize = true;
-            this.lblTradingPlace2.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTradingPlace2.Location = new System.Drawing.Point(265, 10);
-            this.lblTradingPlace2.Name = "lblTradingPlace2";
-            this.lblTradingPlace2.Size = new System.Drawing.Size(150, 26);
-            this.lblTradingPlace2.TabIndex = 1;
-            this.lblTradingPlace2.Text = "Торговая Точка:";
-            // 
-            // cbTradingPlace2
-            // 
-            this.cbTradingPlace2.BackColor = System.Drawing.Color.Transparent;
-            this.cbTradingPlace2.BorderColor = System.Drawing.Color.Black;
-            this.cbTradingPlace2.BorderRadius = 5;
-            this.cbTradingPlace2.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbTradingPlace2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbTradingPlace2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
-            this.cbTradingPlace2.FocusedColor = System.Drawing.Color.Empty;
-            this.cbTradingPlace2.FocusedState.Parent = this.cbTradingPlace2;
-            this.cbTradingPlace2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbTradingPlace2.ForeColor = System.Drawing.Color.Black;
-            this.cbTradingPlace2.FormattingEnabled = true;
-            this.cbTradingPlace2.HoverState.Parent = this.cbTradingPlace2;
-            this.cbTradingPlace2.ItemHeight = 30;
-            this.cbTradingPlace2.Items.AddRange(new object[] {
-            "ВЫБЕРИТЕ ПЛАНЕТАРНУЮ СИСТЕМУ"});
-            this.cbTradingPlace2.ItemsAppearance.Parent = this.cbTradingPlace2;
-            this.cbTradingPlace2.Location = new System.Drawing.Point(270, 39);
-            this.cbTradingPlace2.Name = "cbTradingPlace2";
-            this.cbTradingPlace2.ShadowDecoration.Parent = this.cbTradingPlace2;
-            this.cbTradingPlace2.Size = new System.Drawing.Size(548, 36);
-            this.cbTradingPlace2.TabIndex = 0;
+            this.btnCalculator.BorderRadius = 6;
+            this.btnCalculator.BorderThickness = 2;
+            this.btnCalculator.CheckedState.Parent = this.btnCalculator;
+            this.btnCalculator.CustomImages.Parent = this.btnCalculator;
+            this.btnCalculator.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
+            this.btnCalculator.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCalculator.ForeColor = System.Drawing.Color.Black;
+            this.btnCalculator.HoverState.Parent = this.btnCalculator;
+            this.btnCalculator.Location = new System.Drawing.Point(457, 428);
+            this.btnCalculator.Name = "btnCalculator";
+            this.btnCalculator.ShadowDecoration.Parent = this.btnCalculator;
+            this.btnCalculator.Size = new System.Drawing.Size(415, 43);
+            this.btnCalculator.TabIndex = 3;
+            this.btnCalculator.Text = "ОТКРЫТЬ КАЛЬКУЛЯТОР";
+            this.btnCalculator.Click += new System.EventHandler(this.btnCalculator_Click);
             // 
             // PageDeliveries
             // 
@@ -426,6 +445,7 @@
             this.ClientSize = new System.Drawing.Size(898, 529);
             this.Controls.Add(this.pnlSelling);
             this.Controls.Add(this.pnlBuying);
+            this.Controls.Add(this.btnCalculator);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.tbCargoName);
             this.Controls.Add(this.lblCargo);
@@ -467,5 +487,6 @@
         private System.Windows.Forms.Label lblSelling;
         private Guna.UI2.WinForms.Guna2ComboBox cbTradingPlace2;
         private System.Windows.Forms.Label lblTradingPlace2;
+        private Guna.UI2.WinForms.Guna2TileButton btnCalculator;
     }
 }

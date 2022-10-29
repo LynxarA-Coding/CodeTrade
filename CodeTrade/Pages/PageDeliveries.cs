@@ -107,5 +107,25 @@ namespace CodeTrade.Pages
                 MessageBox.Show("Лог успешно добавлен!", "Успех", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
+
+        private void btnCalculator_Click(object sender, EventArgs e)
+        {
+            bool found = false;
+            foreach (Form form in Application.OpenForms)
+            {
+                if (form.Name == "Calculator")
+                {
+                    found = true;
+                    form.Activate();
+                    return;
+                }
+            }
+
+            if (!found)
+            {
+                Calculator calculator = new Calculator();
+                calculator.Show();
+            }
+        }
     }
 }

@@ -23,14 +23,20 @@ namespace CodeTrade
 
         private void CheckJson()
         {
-            if (!File.Exists("deliveries.json"))
+            string documents = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\CodeTrade\\deliveries.json";
+            // check if foler exists
+            if (!Directory.Exists(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\CodeTrade"))
+            {
+                Directory.CreateDirectory(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\CodeTrade");
+            }
+            if (!File.Exists(documents))
             {
                 Data data = new Data();
                 data.Deliveries = new List<Data.Delivery>();
 
                 string json = JsonConvert.SerializeObject(data.Deliveries, Formatting.Indented);
 
-                File.WriteAllText("deliveries.json", json);
+                File.WriteAllText(documents, json);
             }
         }
 

@@ -32,13 +32,14 @@ namespace CodeTrade
         public void SaveDeliveries()
         {
             string json = JsonConvert.SerializeObject(Deliveries, Formatting.Indented);
+            string path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\CodeTrade\\deliveries.json";
 
-            if (System.IO.File.Exists("deliveries.json"))
+            if (System.IO.File.Exists(path))
             {
-                System.IO.File.Delete("deliveries.json");
+                System.IO.File.Delete(path);
             }
 
-            System.IO.File.WriteAllText("deliveries.json", json);
+            System.IO.File.WriteAllText(path, json);
         }
 
         private void OpenPage(int pagenum)

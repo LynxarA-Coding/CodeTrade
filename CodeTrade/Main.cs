@@ -176,7 +176,8 @@ namespace CodeTrade
         {
             List<Data.Delivery> deliveries;
 
-            StreamReader sr = new StreamReader("deliveries.json");
+            string path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\CodeTrade\\deliveries.json";
+            StreamReader sr = new StreamReader(path);
             string json = sr.ReadToEnd();
             sr.Close();
             sr.Dispose();

@@ -22,3 +22,4 @@ C:\Users\ASUS\Documents\repo\projects\CodeTrade\CodeTrade\bin\Debug\LiveCharts.W
 C:\Users\ASUS\Documents\repo\projects\CodeTrade\CodeTrade\bin\Debug\LiveCharts.Wpf.xml
 C:\Users\ASUS\Documents\repo\projects\CodeTrade\CodeTrade\bin\Debug\System.Diagnostics.DiagnosticSource.xml
 C:\Users\ASUS\Documents\repo\projects\CodeTrade\CodeTrade\obj\Debug\CodeTrade.csproj.Fody.CopyLocal.cache
+C:\Users\ASUS\Documents\repo\projects\CodeTrade\CodeTrade\obj\Debug\CodeTrade.Pages.Calculator.resources
