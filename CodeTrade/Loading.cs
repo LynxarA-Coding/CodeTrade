@@ -19,7 +19,7 @@ namespace CodeTrade
             InitializeComponent();
         }
 
-        private int tick = 0;
+        private int tick;
 
         private void CheckJson()
         {

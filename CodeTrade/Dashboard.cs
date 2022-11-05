@@ -24,8 +24,8 @@ namespace CodeTrade
 
         private bool MenuState = true;
         private List<Guna2TileButton> Buttons = new List<Guna2TileButton>();
-        private int PreviousBtn = 0;
-
+        private int PreviousBtn;
+        
         public List<Data.Delivery> Deliveries = new List<Data.Delivery>();
         public List<string[]> Locations = new List<string[]>();
 

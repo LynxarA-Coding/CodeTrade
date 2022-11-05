@@ -25,8 +25,8 @@ namespace CodeTrade.Pages
         public List<Data.Delivery> Deliveries = new List<Data.Delivery>();
         private List<int> Gains = new List<int>();
         private List<int> Expenses = new List<int>();
-        private int total = 0;
-        private int totalTemp = 0;
+        private int total;
+        private int totalTemp;
 
         private int value { get; set; }
         private List<string> dates = new List<string>();
