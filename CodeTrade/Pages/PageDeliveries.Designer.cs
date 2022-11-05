@@ -89,10 +89,10 @@
             // lblPlanetary1
             // 
             this.lblPlanetary1.AutoSize = true;
-            this.lblPlanetary1.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPlanetary1.Location = new System.Drawing.Point(6, 9);
+            this.lblPlanetary1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPlanetary1.Location = new System.Drawing.Point(6, 12);
             this.lblPlanetary1.Name = "lblPlanetary1";
-            this.lblPlanetary1.Size = new System.Drawing.Size(215, 26);
+            this.lblPlanetary1.Size = new System.Drawing.Size(165, 19);
             this.lblPlanetary1.TabIndex = 1;
             this.lblPlanetary1.Text = "Планетарная Система:";
             // 
@@ -123,10 +123,10 @@
             // lblTradingPlace1
             // 
             this.lblTradingPlace1.AutoSize = true;
-            this.lblTradingPlace1.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTradingPlace1.Location = new System.Drawing.Point(265, 9);
+            this.lblTradingPlace1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTradingPlace1.Location = new System.Drawing.Point(265, 12);
             this.lblTradingPlace1.Name = "lblTradingPlace1";
-            this.lblTradingPlace1.Size = new System.Drawing.Size(150, 26);
+            this.lblTradingPlace1.Size = new System.Drawing.Size(121, 19);
             this.lblTradingPlace1.TabIndex = 1;
             this.lblTradingPlace1.Text = "Торговая Точка:";
             // 
@@ -162,10 +162,10 @@
             // lblCargo
             // 
             this.lblCargo.AutoSize = true;
-            this.lblCargo.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCargo.Location = new System.Drawing.Point(13, 443);
+            this.lblCargo.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCargo.Location = new System.Drawing.Point(13, 447);
             this.lblCargo.Name = "lblCargo";
-            this.lblCargo.Size = new System.Drawing.Size(68, 26);
+            this.lblCargo.Size = new System.Drawing.Size(54, 19);
             this.lblCargo.TabIndex = 1;
             this.lblCargo.Text = "Товар:";
             // 
@@ -202,40 +202,40 @@
             // lblPrice
             // 
             this.lblPrice.AutoSize = true;
-            this.lblPrice.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPrice.Location = new System.Drawing.Point(265, 86);
+            this.lblPrice.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPrice.Location = new System.Drawing.Point(265, 89);
             this.lblPrice.Name = "lblPrice";
-            this.lblPrice.Size = new System.Drawing.Size(146, 26);
+            this.lblPrice.Size = new System.Drawing.Size(114, 19);
             this.lblPrice.TabIndex = 1;
             this.lblPrice.Text = "Цена Покупки:";
             // 
             // lblPriceCurrency
             // 
             this.lblPriceCurrency.AutoSize = true;
-            this.lblPriceCurrency.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPriceCurrency.Location = new System.Drawing.Point(584, 125);
+            this.lblPriceCurrency.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPriceCurrency.Location = new System.Drawing.Point(584, 129);
             this.lblPriceCurrency.Name = "lblPriceCurrency";
-            this.lblPriceCurrency.Size = new System.Drawing.Size(57, 26);
+            this.lblPriceCurrency.Size = new System.Drawing.Size(43, 19);
             this.lblPriceCurrency.TabIndex = 1;
             this.lblPriceCurrency.Text = "aUEC";
             // 
             // lblSellPrice
             // 
             this.lblSellPrice.AutoSize = true;
-            this.lblSellPrice.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSellPrice.Location = new System.Drawing.Point(265, 86);
+            this.lblSellPrice.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSellPrice.Location = new System.Drawing.Point(265, 89);
             this.lblSellPrice.Name = "lblSellPrice";
-            this.lblSellPrice.Size = new System.Drawing.Size(152, 26);
+            this.lblSellPrice.Size = new System.Drawing.Size(119, 19);
             this.lblSellPrice.TabIndex = 1;
             this.lblSellPrice.Text = "Цена Продажи:";
             // 
             // lblSellPriceCurrency
             // 
             this.lblSellPriceCurrency.AutoSize = true;
-            this.lblSellPriceCurrency.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSellPriceCurrency.Location = new System.Drawing.Point(584, 126);
+            this.lblSellPriceCurrency.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSellPriceCurrency.Location = new System.Drawing.Point(584, 130);
             this.lblSellPriceCurrency.Name = "lblSellPriceCurrency";
-            this.lblSellPriceCurrency.Size = new System.Drawing.Size(57, 26);
+            this.lblSellPriceCurrency.Size = new System.Drawing.Size(43, 19);
             this.lblSellPriceCurrency.TabIndex = 1;
             this.lblSellPriceCurrency.Text = "aUEC";
             // 
@@ -276,7 +276,7 @@
             this.btnAdd.CheckedState.Parent = this.btnAdd;
             this.btnAdd.CustomImages.Parent = this.btnAdd;
             this.btnAdd.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
-            this.btnAdd.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.ForeColor = System.Drawing.Color.Black;
             this.btnAdd.HoverState.Parent = this.btnAdd;
             this.btnAdd.Location = new System.Drawing.Point(457, 474);
@@ -360,20 +360,20 @@
             // lblPlanetary2
             // 
             this.lblPlanetary2.AutoSize = true;
-            this.lblPlanetary2.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPlanetary2.Location = new System.Drawing.Point(6, 10);
+            this.lblPlanetary2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPlanetary2.Location = new System.Drawing.Point(6, 13);
             this.lblPlanetary2.Name = "lblPlanetary2";
-            this.lblPlanetary2.Size = new System.Drawing.Size(215, 26);
+            this.lblPlanetary2.Size = new System.Drawing.Size(165, 19);
             this.lblPlanetary2.TabIndex = 1;
             this.lblPlanetary2.Text = "Планетарная Система:";
             // 
             // lblTradingPlace2
             // 
             this.lblTradingPlace2.AutoSize = true;
-            this.lblTradingPlace2.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTradingPlace2.Location = new System.Drawing.Point(265, 10);
+            this.lblTradingPlace2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTradingPlace2.Location = new System.Drawing.Point(265, 13);
             this.lblTradingPlace2.Name = "lblTradingPlace2";
-            this.lblTradingPlace2.Size = new System.Drawing.Size(150, 26);
+            this.lblTradingPlace2.Size = new System.Drawing.Size(121, 19);
             this.lblTradingPlace2.TabIndex = 1;
             this.lblTradingPlace2.Text = "Торговая Точка:";
             // 
@@ -426,7 +426,7 @@
             this.btnCalculator.CheckedState.Parent = this.btnCalculator;
             this.btnCalculator.CustomImages.Parent = this.btnCalculator;
             this.btnCalculator.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
-            this.btnCalculator.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCalculator.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCalculator.ForeColor = System.Drawing.Color.Black;
             this.btnCalculator.HoverState.Parent = this.btnCalculator;
             this.btnCalculator.Location = new System.Drawing.Point(457, 428);

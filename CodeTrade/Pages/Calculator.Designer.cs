@@ -31,9 +31,9 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Calculator));
             this.pnlHeader = new Guna.UI2.WinForms.Guna2Panel();
-            this.dragControl = new Guna.UI2.WinForms.Guna2DragControl(this.components);
-            this.btnClose = new System.Windows.Forms.PictureBox();
             this.lblHeader = new System.Windows.Forms.Label();
+            this.btnClose = new System.Windows.Forms.PictureBox();
+            this.dragControl = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.tbInput1 = new Guna.UI2.WinForms.Guna2TextBox();
             this.lblInput1 = new System.Windows.Forms.Label();
             this.lblCurrency1 = new System.Windows.Forms.Label();
@@ -70,9 +70,15 @@
             this.pnlHeader.Size = new System.Drawing.Size(775, 59);
             this.pnlHeader.TabIndex = 0;
             // 
-            // dragControl
+            // lblHeader
             // 
-            this.dragControl.TargetControl = this.pnlHeader;
+            this.lblHeader.AutoSize = true;
+            this.lblHeader.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHeader.Location = new System.Drawing.Point(12, 16);
+            this.lblHeader.Name = "lblHeader";
+            this.lblHeader.Size = new System.Drawing.Size(125, 26);
+            this.lblHeader.TabIndex = 1;
+            this.lblHeader.Text = "Калькулятор";
             // 
             // btnClose
             // 
@@ -85,15 +91,9 @@
             this.btnClose.TabStop = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // lblHeader
+            // dragControl
             // 
-            this.lblHeader.AutoSize = true;
-            this.lblHeader.Font = new System.Drawing.Font("Calibri", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHeader.Location = new System.Drawing.Point(12, 12);
-            this.lblHeader.Name = "lblHeader";
-            this.lblHeader.Size = new System.Drawing.Size(162, 33);
-            this.lblHeader.TabIndex = 1;
-            this.lblHeader.Text = "Калькулятор";
+            this.dragControl.TargetControl = this.pnlHeader;
             // 
             // tbInput1
             // 
@@ -129,20 +129,20 @@
             // lblInput1
             // 
             this.lblInput1.AutoSize = true;
-            this.lblInput1.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblInput1.Location = new System.Drawing.Point(13, 63);
+            this.lblInput1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblInput1.Location = new System.Drawing.Point(13, 69);
             this.lblInput1.Name = "lblInput1";
-            this.lblInput1.Size = new System.Drawing.Size(73, 26);
+            this.lblInput1.Size = new System.Drawing.Size(55, 19);
             this.lblInput1.TabIndex = 2;
             this.lblInput1.Text = "Число:";
             // 
             // lblCurrency1
             // 
             this.lblCurrency1.AutoSize = true;
-            this.lblCurrency1.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCurrency1.Location = new System.Drawing.Point(323, 104);
+            this.lblCurrency1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCurrency1.Location = new System.Drawing.Point(323, 109);
             this.lblCurrency1.Name = "lblCurrency1";
-            this.lblCurrency1.Size = new System.Drawing.Size(57, 26);
+            this.lblCurrency1.Size = new System.Drawing.Size(43, 19);
             this.lblCurrency1.TabIndex = 2;
             this.lblCurrency1.Text = "aUEC";
             // 
@@ -180,20 +180,20 @@
             // lblCurrency2
             // 
             this.lblCurrency2.AutoSize = true;
-            this.lblCurrency2.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCurrency2.Location = new System.Drawing.Point(323, 248);
+            this.lblCurrency2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCurrency2.Location = new System.Drawing.Point(323, 253);
             this.lblCurrency2.Name = "lblCurrency2";
-            this.lblCurrency2.Size = new System.Drawing.Size(57, 26);
+            this.lblCurrency2.Size = new System.Drawing.Size(43, 19);
             this.lblCurrency2.TabIndex = 2;
             this.lblCurrency2.Text = "aUEC";
             // 
             // lblOutput1
             // 
             this.lblOutput1.AutoSize = true;
-            this.lblOutput1.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblOutput1.Location = new System.Drawing.Point(13, 205);
+            this.lblOutput1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOutput1.Location = new System.Drawing.Point(13, 208);
             this.lblOutput1.Name = "lblOutput1";
-            this.lblOutput1.Size = new System.Drawing.Size(104, 26);
+            this.lblOutput1.Size = new System.Drawing.Size(79, 19);
             this.lblOutput1.TabIndex = 2;
             this.lblOutput1.Text = "Результат:";
             // 
@@ -204,7 +204,7 @@
             this.btnAdd.CheckedState.Parent = this.btnAdd;
             this.btnAdd.CustomImages.Parent = this.btnAdd;
             this.btnAdd.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
-            this.btnAdd.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.ForeColor = System.Drawing.Color.Black;
             this.btnAdd.HoverState.Parent = this.btnAdd;
             this.btnAdd.Location = new System.Drawing.Point(18, 149);
@@ -222,7 +222,7 @@
             this.btnReset.CheckedState.Parent = this.btnReset;
             this.btnReset.CustomImages.Parent = this.btnReset;
             this.btnReset.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
-            this.btnReset.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReset.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReset.ForeColor = System.Drawing.Color.Black;
             this.btnReset.HoverState.Parent = this.btnReset;
             this.btnReset.Location = new System.Drawing.Point(18, 291);
@@ -298,40 +298,40 @@
             // lblBalanceBefore
             // 
             this.lblBalanceBefore.AutoSize = true;
-            this.lblBalanceBefore.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBalanceBefore.Location = new System.Drawing.Point(399, 63);
+            this.lblBalanceBefore.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBalanceBefore.Location = new System.Drawing.Point(399, 67);
             this.lblBalanceBefore.Name = "lblBalanceBefore";
-            this.lblBalanceBefore.Size = new System.Drawing.Size(279, 26);
+            this.lblBalanceBefore.Size = new System.Drawing.Size(220, 19);
             this.lblBalanceBefore.TabIndex = 2;
             this.lblBalanceBefore.Text = "Баланс до покупки/продажи:";
             // 
             // lblCurrencyBefore
             // 
             this.lblCurrencyBefore.AutoSize = true;
-            this.lblCurrencyBefore.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCurrencyBefore.Location = new System.Drawing.Point(709, 104);
+            this.lblCurrencyBefore.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCurrencyBefore.Location = new System.Drawing.Point(709, 109);
             this.lblCurrencyBefore.Name = "lblCurrencyBefore";
-            this.lblCurrencyBefore.Size = new System.Drawing.Size(57, 26);
+            this.lblCurrencyBefore.Size = new System.Drawing.Size(43, 19);
             this.lblCurrencyBefore.TabIndex = 2;
             this.lblCurrencyBefore.Text = "aUEC";
             // 
             // lblCurrencyAfter
             // 
             this.lblCurrencyAfter.AutoSize = true;
-            this.lblCurrencyAfter.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCurrencyAfter.Location = new System.Drawing.Point(709, 195);
+            this.lblCurrencyAfter.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCurrencyAfter.Location = new System.Drawing.Point(709, 200);
             this.lblCurrencyAfter.Name = "lblCurrencyAfter";
-            this.lblCurrencyAfter.Size = new System.Drawing.Size(57, 26);
+            this.lblCurrencyAfter.Size = new System.Drawing.Size(43, 19);
             this.lblCurrencyAfter.TabIndex = 2;
             this.lblCurrencyAfter.Text = "aUEC";
             // 
             // lblBalanceAfter
             // 
             this.lblBalanceAfter.AutoSize = true;
-            this.lblBalanceAfter.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBalanceAfter.Location = new System.Drawing.Point(399, 152);
+            this.lblBalanceAfter.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBalanceAfter.Location = new System.Drawing.Point(399, 156);
             this.lblBalanceAfter.Name = "lblBalanceAfter";
-            this.lblBalanceAfter.Size = new System.Drawing.Size(309, 26);
+            this.lblBalanceAfter.Size = new System.Drawing.Size(243, 19);
             this.lblBalanceAfter.TabIndex = 2;
             this.lblBalanceAfter.Text = "Баланс после покупки/продажи:";
             // 
@@ -342,7 +342,7 @@
             this.btnCalculate.CheckedState.Parent = this.btnCalculate;
             this.btnCalculate.CustomImages.Parent = this.btnCalculate;
             this.btnCalculate.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
-            this.btnCalculate.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCalculate.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCalculate.ForeColor = System.Drawing.Color.Black;
             this.btnCalculate.HoverState.Parent = this.btnCalculate;
             this.btnCalculate.Location = new System.Drawing.Point(404, 238);
@@ -387,20 +387,20 @@
             // lblDifference
             // 
             this.lblDifference.AutoSize = true;
-            this.lblDifference.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDifference.Location = new System.Drawing.Point(399, 300);
+            this.lblDifference.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDifference.Location = new System.Drawing.Point(399, 304);
             this.lblDifference.Name = "lblDifference";
-            this.lblDifference.Size = new System.Drawing.Size(93, 26);
+            this.lblDifference.Size = new System.Drawing.Size(72, 19);
             this.lblDifference.TabIndex = 2;
             this.lblDifference.Text = "Разница:";
             // 
             // lblDifferenceCurrency
             // 
             this.lblDifferenceCurrency.AutoSize = true;
-            this.lblDifferenceCurrency.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDifferenceCurrency.Location = new System.Drawing.Point(709, 343);
+            this.lblDifferenceCurrency.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDifferenceCurrency.Location = new System.Drawing.Point(709, 348);
             this.lblDifferenceCurrency.Name = "lblDifferenceCurrency";
-            this.lblDifferenceCurrency.Size = new System.Drawing.Size(57, 26);
+            this.lblDifferenceCurrency.Size = new System.Drawing.Size(43, 19);
             this.lblDifferenceCurrency.TabIndex = 2;
             this.lblDifferenceCurrency.Text = "aUEC";
             // 

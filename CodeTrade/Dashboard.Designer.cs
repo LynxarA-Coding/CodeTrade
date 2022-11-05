@@ -85,7 +85,7 @@
             this.btnSettings.CustomImages.Parent = this.btnSettings;
             this.menuTransition.SetDecoration(this.btnSettings, Guna.UI2.AnimatorNS.DecorationType.None);
             this.btnSettings.FillColor = System.Drawing.Color.Transparent;
-            this.btnSettings.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSettings.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSettings.ForeColor = System.Drawing.Color.Black;
             this.btnSettings.HoverState.Parent = this.btnSettings;
             this.btnSettings.Location = new System.Drawing.Point(3, 159);
@@ -106,7 +106,7 @@
             this.btnLogs.CustomImages.Parent = this.btnLogs;
             this.menuTransition.SetDecoration(this.btnLogs, Guna.UI2.AnimatorNS.DecorationType.None);
             this.btnLogs.FillColor = System.Drawing.Color.Transparent;
-            this.btnLogs.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogs.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogs.ForeColor = System.Drawing.Color.Black;
             this.btnLogs.HoverState.Parent = this.btnLogs;
             this.btnLogs.Location = new System.Drawing.Point(3, 107);
@@ -127,7 +127,7 @@
             this.btnDeliveries.CustomImages.Parent = this.btnDeliveries;
             this.menuTransition.SetDecoration(this.btnDeliveries, Guna.UI2.AnimatorNS.DecorationType.None);
             this.btnDeliveries.FillColor = System.Drawing.Color.Transparent;
-            this.btnDeliveries.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeliveries.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDeliveries.ForeColor = System.Drawing.Color.Black;
             this.btnDeliveries.HoverState.Parent = this.btnDeliveries;
             this.btnDeliveries.Location = new System.Drawing.Point(3, 55);
@@ -148,7 +148,7 @@
             this.btnDashboard.CustomImages.Parent = this.btnDashboard;
             this.menuTransition.SetDecoration(this.btnDashboard, Guna.UI2.AnimatorNS.DecorationType.None);
             this.btnDashboard.FillColor = System.Drawing.Color.Transparent;
-            this.btnDashboard.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDashboard.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDashboard.ForeColor = System.Drawing.Color.Black;
             this.btnDashboard.HoverState.Parent = this.btnDashboard;
             this.btnDashboard.Location = new System.Drawing.Point(3, 3);
