@@ -75,7 +75,7 @@
             this.tbCargoName.SelectedText = "";
             this.tbCargoName.ShadowDecoration.Parent = this.tbCargoName;
             this.tbCargoName.Size = new System.Drawing.Size(380, 43);
-            this.tbCargoName.TabIndex = 2;
+            this.tbCargoName.TabIndex = 1;
             // 
             // lblCargo
             // 
@@ -101,7 +101,7 @@
             this.btnFinish.Name = "btnFinish";
             this.btnFinish.ShadowDecoration.Parent = this.btnFinish;
             this.btnFinish.Size = new System.Drawing.Size(436, 43);
-            this.btnFinish.TabIndex = 3;
+            this.btnFinish.TabIndex = 6;
             this.btnFinish.Text = "ЗАВЕРШИТЬ ПОЕЗДКУ";
             this.btnFinish.Click += new System.EventHandler(this.btnFinish_Click);
             // 
@@ -266,7 +266,7 @@
             this.tbBuyPlace.SelectedText = "";
             this.tbBuyPlace.ShadowDecoration.Parent = this.tbBuyPlace;
             this.tbBuyPlace.Size = new System.Drawing.Size(436, 43);
-            this.tbBuyPlace.TabIndex = 2;
+            this.tbBuyPlace.TabIndex = 4;
             this.tbBuyPlace.TextChanged += new System.EventHandler(this.tbBuyPlace_TextChanged);
             // 
             // tbSellPlace
@@ -297,7 +297,7 @@
             this.tbSellPlace.SelectedText = "";
             this.tbSellPlace.ShadowDecoration.Parent = this.tbSellPlace;
             this.tbSellPlace.Size = new System.Drawing.Size(436, 43);
-            this.tbSellPlace.TabIndex = 2;
+            this.tbSellPlace.TabIndex = 5;
             this.tbSellPlace.TextChanged += new System.EventHandler(this.tbSellPlace_TextChanged);
             // 
             // pnlStats
