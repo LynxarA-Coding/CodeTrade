@@ -28,107 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.cbPlanetary1 = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.lblPlanetary1 = new System.Windows.Forms.Label();
-            this.cbTradingPlace1 = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.lblTradingPlace1 = new System.Windows.Forms.Label();
             this.tbCargoName = new Guna.UI2.WinForms.Guna2TextBox();
             this.lblCargo = new System.Windows.Forms.Label();
-            this.tbPrice = new Guna.UI2.WinForms.Guna2TextBox();
-            this.lblPrice = new System.Windows.Forms.Label();
-            this.lblPriceCurrency = new System.Windows.Forms.Label();
-            this.lblSellPrice = new System.Windows.Forms.Label();
-            this.lblSellPriceCurrency = new System.Windows.Forms.Label();
-            this.tbSellPrice = new Guna.UI2.WinForms.Guna2TextBox();
-            this.btnAdd = new Guna.UI2.WinForms.Guna2TileButton();
-            this.lblBuying = new System.Windows.Forms.Label();
-            this.pnlBuying = new Guna.UI2.WinForms.Guna2Panel();
-            this.pnlSelling = new Guna.UI2.WinForms.Guna2Panel();
-            this.cbTradingPlace2 = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.lblPlanetary2 = new System.Windows.Forms.Label();
-            this.lblTradingPlace2 = new System.Windows.Forms.Label();
-            this.cbPlanetary2 = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.lblSelling = new System.Windows.Forms.Label();
-            this.btnCalculator = new Guna.UI2.WinForms.Guna2TileButton();
-            this.pnlBuying.SuspendLayout();
-            this.pnlSelling.SuspendLayout();
+            this.btnFinish = new Guna.UI2.WinForms.Guna2TileButton();
+            this.pnlCargo = new System.Windows.Forms.FlowLayoutPanel();
+            this.lblCargoTitle = new System.Windows.Forms.Label();
+            this.btnAddCargo = new Guna.UI2.WinForms.Guna2TileButton();
+            this.tbCargoPrice = new Guna.UI2.WinForms.Guna2TextBox();
+            this.lblCargoCurrency = new System.Windows.Forms.Label();
+            this.pnlDivider1 = new System.Windows.Forms.Panel();
+            this.pnlDivider2 = new System.Windows.Forms.Panel();
+            this.lblBuyTotal = new System.Windows.Forms.Label();
+            this.lblSellTotal = new System.Windows.Forms.Label();
+            this.lblFullTotal = new System.Windows.Forms.Label();
+            this.pnlDivider3 = new System.Windows.Forms.Panel();
+            this.tbBuyPlace = new Guna.UI2.WinForms.Guna2TextBox();
+            this.tbSellPlace = new Guna.UI2.WinForms.Guna2TextBox();
+            this.pnlStats = new Guna.UI2.WinForms.Guna2Panel();
+            this.pnlStats.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // cbPlanetary1
-            // 
-            this.cbPlanetary1.BackColor = System.Drawing.Color.Transparent;
-            this.cbPlanetary1.BorderColor = System.Drawing.Color.Black;
-            this.cbPlanetary1.BorderRadius = 5;
-            this.cbPlanetary1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbPlanetary1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbPlanetary1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
-            this.cbPlanetary1.FocusedColor = System.Drawing.Color.Empty;
-            this.cbPlanetary1.FocusedState.Parent = this.cbPlanetary1;
-            this.cbPlanetary1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbPlanetary1.ForeColor = System.Drawing.Color.Black;
-            this.cbPlanetary1.FormattingEnabled = true;
-            this.cbPlanetary1.HoverState.Parent = this.cbPlanetary1;
-            this.cbPlanetary1.ItemHeight = 30;
-            this.cbPlanetary1.Items.AddRange(new object[] {
-            "ARC",
-            "ArcCorp",
-            "CRU",
-            "Crusader",
-            "HUR",
-            "Hurston",
-            "Microtech"});
-            this.cbPlanetary1.ItemsAppearance.Parent = this.cbPlanetary1;
-            this.cbPlanetary1.Location = new System.Drawing.Point(11, 38);
-            this.cbPlanetary1.Name = "cbPlanetary1";
-            this.cbPlanetary1.ShadowDecoration.Parent = this.cbPlanetary1;
-            this.cbPlanetary1.Size = new System.Drawing.Size(239, 36);
-            this.cbPlanetary1.StartIndex = 0;
-            this.cbPlanetary1.TabIndex = 0;
-            this.cbPlanetary1.SelectedIndexChanged += new System.EventHandler(this.cbPlanetary_SelectedIndexChanged);
-            // 
-            // lblPlanetary1
-            // 
-            this.lblPlanetary1.AutoSize = true;
-            this.lblPlanetary1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPlanetary1.Location = new System.Drawing.Point(6, 12);
-            this.lblPlanetary1.Name = "lblPlanetary1";
-            this.lblPlanetary1.Size = new System.Drawing.Size(165, 19);
-            this.lblPlanetary1.TabIndex = 1;
-            this.lblPlanetary1.Text = "Планетарная Система:";
-            // 
-            // cbTradingPlace1
-            // 
-            this.cbTradingPlace1.BackColor = System.Drawing.Color.Transparent;
-            this.cbTradingPlace1.BorderColor = System.Drawing.Color.Black;
-            this.cbTradingPlace1.BorderRadius = 5;
-            this.cbTradingPlace1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbTradingPlace1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbTradingPlace1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
-            this.cbTradingPlace1.FocusedColor = System.Drawing.Color.Empty;
-            this.cbTradingPlace1.FocusedState.Parent = this.cbTradingPlace1;
-            this.cbTradingPlace1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbTradingPlace1.ForeColor = System.Drawing.Color.Black;
-            this.cbTradingPlace1.FormattingEnabled = true;
-            this.cbTradingPlace1.HoverState.Parent = this.cbTradingPlace1;
-            this.cbTradingPlace1.ItemHeight = 30;
-            this.cbTradingPlace1.Items.AddRange(new object[] {
-            "ВЫБЕРИТЕ ПЛАНЕТАРНУЮ СИСТЕМУ"});
-            this.cbTradingPlace1.ItemsAppearance.Parent = this.cbTradingPlace1;
-            this.cbTradingPlace1.Location = new System.Drawing.Point(270, 38);
-            this.cbTradingPlace1.Name = "cbTradingPlace1";
-            this.cbTradingPlace1.ShadowDecoration.Parent = this.cbTradingPlace1;
-            this.cbTradingPlace1.Size = new System.Drawing.Size(548, 36);
-            this.cbTradingPlace1.TabIndex = 0;
-            // 
-            // lblTradingPlace1
-            // 
-            this.lblTradingPlace1.AutoSize = true;
-            this.lblTradingPlace1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTradingPlace1.Location = new System.Drawing.Point(265, 12);
-            this.lblTradingPlace1.Name = "lblTradingPlace1";
-            this.lblTradingPlace1.Size = new System.Drawing.Size(121, 19);
-            this.lblTradingPlace1.TabIndex = 1;
-            this.lblTradingPlace1.Text = "Торговая Точка:";
             // 
             // tbCargoName
             // 
@@ -148,7 +66,7 @@
             this.tbCargoName.ForeColor = System.Drawing.Color.Black;
             this.tbCargoName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbCargoName.HoverState.Parent = this.tbCargoName;
-            this.tbCargoName.Location = new System.Drawing.Point(18, 474);
+            this.tbCargoName.Location = new System.Drawing.Point(12, 38);
             this.tbCargoName.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.tbCargoName.Name = "tbCargoName";
             this.tbCargoName.PasswordChar = '\0';
@@ -156,286 +74,245 @@
             this.tbCargoName.PlaceholderText = "Введите название товара";
             this.tbCargoName.SelectedText = "";
             this.tbCargoName.ShadowDecoration.Parent = this.tbCargoName;
-            this.tbCargoName.Size = new System.Drawing.Size(431, 43);
+            this.tbCargoName.Size = new System.Drawing.Size(380, 43);
             this.tbCargoName.TabIndex = 2;
             // 
             // lblCargo
             // 
             this.lblCargo.AutoSize = true;
             this.lblCargo.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCargo.Location = new System.Drawing.Point(13, 447);
+            this.lblCargo.Location = new System.Drawing.Point(12, 16);
             this.lblCargo.Name = "lblCargo";
-            this.lblCargo.Size = new System.Drawing.Size(54, 19);
+            this.lblCargo.Size = new System.Drawing.Size(133, 19);
             this.lblCargo.TabIndex = 1;
-            this.lblCargo.Text = "Товар:";
+            this.lblCargo.Text = "Название Товара:";
             // 
-            // tbPrice
+            // btnFinish
             // 
-            this.tbPrice.BorderColor = System.Drawing.Color.Black;
-            this.tbPrice.BorderRadius = 6;
-            this.tbPrice.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.tbPrice.DefaultText = "";
-            this.tbPrice.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.tbPrice.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.tbPrice.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tbPrice.DisabledState.Parent = this.tbPrice;
-            this.tbPrice.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tbPrice.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
-            this.tbPrice.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbPrice.FocusedState.Parent = this.tbPrice;
-            this.tbPrice.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbPrice.ForeColor = System.Drawing.Color.Black;
-            this.tbPrice.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbPrice.HoverState.Parent = this.tbPrice;
-            this.tbPrice.Location = new System.Drawing.Point(270, 117);
-            this.tbPrice.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
-            this.tbPrice.Name = "tbPrice";
-            this.tbPrice.PasswordChar = '\0';
-            this.tbPrice.PlaceholderForeColor = System.Drawing.Color.Black;
-            this.tbPrice.PlaceholderText = "Введите цену закупки товара";
-            this.tbPrice.SelectedText = "";
-            this.tbPrice.ShadowDecoration.Parent = this.tbPrice;
-            this.tbPrice.Size = new System.Drawing.Size(314, 43);
-            this.tbPrice.TabIndex = 2;
-            this.tbPrice.TextChanged += new System.EventHandler(this.tbPrice_TextChanged);
+            this.btnFinish.BorderRadius = 6;
+            this.btnFinish.BorderThickness = 2;
+            this.btnFinish.CheckedState.Parent = this.btnFinish;
+            this.btnFinish.CustomImages.Parent = this.btnFinish;
+            this.btnFinish.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
+            this.btnFinish.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFinish.ForeColor = System.Drawing.Color.Black;
+            this.btnFinish.HoverState.Parent = this.btnFinish;
+            this.btnFinish.Location = new System.Drawing.Point(9, 474);
+            this.btnFinish.Name = "btnFinish";
+            this.btnFinish.ShadowDecoration.Parent = this.btnFinish;
+            this.btnFinish.Size = new System.Drawing.Size(436, 43);
+            this.btnFinish.TabIndex = 3;
+            this.btnFinish.Text = "ЗАВЕРШИТЬ ПОЕЗДКУ";
+            this.btnFinish.Click += new System.EventHandler(this.btnFinish_Click);
             // 
-            // lblPrice
+            // pnlCargo
             // 
-            this.lblPrice.AutoSize = true;
-            this.lblPrice.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPrice.Location = new System.Drawing.Point(265, 89);
-            this.lblPrice.Name = "lblPrice";
-            this.lblPrice.Size = new System.Drawing.Size(114, 19);
-            this.lblPrice.TabIndex = 1;
-            this.lblPrice.Text = "Цена Покупки:";
+            this.pnlCargo.AutoScroll = true;
+            this.pnlCargo.Location = new System.Drawing.Point(457, 31);
+            this.pnlCargo.Name = "pnlCargo";
+            this.pnlCargo.Size = new System.Drawing.Size(415, 486);
+            this.pnlCargo.TabIndex = 4;
             // 
-            // lblPriceCurrency
+            // lblCargoTitle
             // 
-            this.lblPriceCurrency.AutoSize = true;
-            this.lblPriceCurrency.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPriceCurrency.Location = new System.Drawing.Point(584, 129);
-            this.lblPriceCurrency.Name = "lblPriceCurrency";
-            this.lblPriceCurrency.Size = new System.Drawing.Size(43, 19);
-            this.lblPriceCurrency.TabIndex = 1;
-            this.lblPriceCurrency.Text = "aUEC";
+            this.lblCargoTitle.AutoSize = true;
+            this.lblCargoTitle.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCargoTitle.Location = new System.Drawing.Point(453, 9);
+            this.lblCargoTitle.Name = "lblCargoTitle";
+            this.lblCargoTitle.Size = new System.Drawing.Size(138, 19);
+            this.lblCargoTitle.TabIndex = 1;
+            this.lblCargoTitle.Text = "Товар на корабле:";
             // 
-            // lblSellPrice
+            // btnAddCargo
             // 
-            this.lblSellPrice.AutoSize = true;
-            this.lblSellPrice.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSellPrice.Location = new System.Drawing.Point(265, 89);
-            this.lblSellPrice.Name = "lblSellPrice";
-            this.lblSellPrice.Size = new System.Drawing.Size(119, 19);
-            this.lblSellPrice.TabIndex = 1;
-            this.lblSellPrice.Text = "Цена Продажи:";
+            this.btnAddCargo.BorderRadius = 6;
+            this.btnAddCargo.BorderThickness = 2;
+            this.btnAddCargo.CheckedState.Parent = this.btnAddCargo;
+            this.btnAddCargo.CustomImages.Parent = this.btnAddCargo;
+            this.btnAddCargo.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
+            this.btnAddCargo.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddCargo.ForeColor = System.Drawing.Color.Black;
+            this.btnAddCargo.HoverState.Parent = this.btnAddCargo;
+            this.btnAddCargo.Location = new System.Drawing.Point(12, 142);
+            this.btnAddCargo.Name = "btnAddCargo";
+            this.btnAddCargo.ShadowDecoration.Parent = this.btnAddCargo;
+            this.btnAddCargo.Size = new System.Drawing.Size(433, 43);
+            this.btnAddCargo.TabIndex = 3;
+            this.btnAddCargo.Text = "ДОБАВИТЬ ТОВАР НА КОРАБЛЬ";
+            this.btnAddCargo.Click += new System.EventHandler(this.btnAddCargo_Click);
             // 
-            // lblSellPriceCurrency
+            // tbCargoPrice
             // 
-            this.lblSellPriceCurrency.AutoSize = true;
-            this.lblSellPriceCurrency.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSellPriceCurrency.Location = new System.Drawing.Point(584, 130);
-            this.lblSellPriceCurrency.Name = "lblSellPriceCurrency";
-            this.lblSellPriceCurrency.Size = new System.Drawing.Size(43, 19);
-            this.lblSellPriceCurrency.TabIndex = 1;
-            this.lblSellPriceCurrency.Text = "aUEC";
+            this.tbCargoPrice.BorderColor = System.Drawing.Color.Black;
+            this.tbCargoPrice.BorderRadius = 6;
+            this.tbCargoPrice.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbCargoPrice.DefaultText = "";
+            this.tbCargoPrice.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.tbCargoPrice.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.tbCargoPrice.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbCargoPrice.DisabledState.Parent = this.tbCargoPrice;
+            this.tbCargoPrice.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbCargoPrice.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
+            this.tbCargoPrice.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbCargoPrice.FocusedState.Parent = this.tbCargoPrice;
+            this.tbCargoPrice.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbCargoPrice.ForeColor = System.Drawing.Color.Black;
+            this.tbCargoPrice.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbCargoPrice.HoverState.Parent = this.tbCargoPrice;
+            this.tbCargoPrice.Location = new System.Drawing.Point(12, 91);
+            this.tbCargoPrice.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.tbCargoPrice.Name = "tbCargoPrice";
+            this.tbCargoPrice.PasswordChar = '\0';
+            this.tbCargoPrice.PlaceholderForeColor = System.Drawing.Color.Black;
+            this.tbCargoPrice.PlaceholderText = "Введите цену товара";
+            this.tbCargoPrice.SelectedText = "";
+            this.tbCargoPrice.ShadowDecoration.Parent = this.tbCargoPrice;
+            this.tbCargoPrice.Size = new System.Drawing.Size(380, 43);
+            this.tbCargoPrice.TabIndex = 2;
+            this.tbCargoPrice.TextChanged += new System.EventHandler(this.tbCargoPrice_TextChanged);
             // 
-            // tbSellPrice
+            // lblCargoCurrency
             // 
-            this.tbSellPrice.BorderColor = System.Drawing.Color.Black;
-            this.tbSellPrice.BorderRadius = 6;
-            this.tbSellPrice.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.tbSellPrice.DefaultText = "";
-            this.tbSellPrice.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.tbSellPrice.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.tbSellPrice.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tbSellPrice.DisabledState.Parent = this.tbSellPrice;
-            this.tbSellPrice.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tbSellPrice.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
-            this.tbSellPrice.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbSellPrice.FocusedState.Parent = this.tbSellPrice;
-            this.tbSellPrice.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbSellPrice.ForeColor = System.Drawing.Color.Black;
-            this.tbSellPrice.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbSellPrice.HoverState.Parent = this.tbSellPrice;
-            this.tbSellPrice.Location = new System.Drawing.Point(270, 117);
-            this.tbSellPrice.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
-            this.tbSellPrice.Name = "tbSellPrice";
-            this.tbSellPrice.PasswordChar = '\0';
-            this.tbSellPrice.PlaceholderForeColor = System.Drawing.Color.Black;
-            this.tbSellPrice.PlaceholderText = "Введите цену продажи товара";
-            this.tbSellPrice.SelectedText = "";
-            this.tbSellPrice.ShadowDecoration.Parent = this.tbSellPrice;
-            this.tbSellPrice.Size = new System.Drawing.Size(314, 43);
-            this.tbSellPrice.TabIndex = 2;
-            this.tbSellPrice.TextChanged += new System.EventHandler(this.tbSellPrice_TextChanged);
+            this.lblCargoCurrency.AutoSize = true;
+            this.lblCargoCurrency.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCargoCurrency.Location = new System.Drawing.Point(393, 103);
+            this.lblCargoCurrency.Name = "lblCargoCurrency";
+            this.lblCargoCurrency.Size = new System.Drawing.Size(43, 19);
+            this.lblCargoCurrency.TabIndex = 1;
+            this.lblCargoCurrency.Text = "aUEC";
             // 
-            // btnAdd
+            // pnlDivider1
             // 
-            this.btnAdd.BorderRadius = 6;
-            this.btnAdd.BorderThickness = 2;
-            this.btnAdd.CheckedState.Parent = this.btnAdd;
-            this.btnAdd.CustomImages.Parent = this.btnAdd;
-            this.btnAdd.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
-            this.btnAdd.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.ForeColor = System.Drawing.Color.Black;
-            this.btnAdd.HoverState.Parent = this.btnAdd;
-            this.btnAdd.Location = new System.Drawing.Point(457, 474);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.ShadowDecoration.Parent = this.btnAdd;
-            this.btnAdd.Size = new System.Drawing.Size(415, 43);
-            this.btnAdd.TabIndex = 3;
-            this.btnAdd.Text = "ДОБАВИТЬ МАРШРУТНЫЙ ЛОГ";
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            this.pnlDivider1.BackColor = System.Drawing.Color.Black;
+            this.pnlDivider1.Location = new System.Drawing.Point(14, 191);
+            this.pnlDivider1.Name = "pnlDivider1";
+            this.pnlDivider1.Size = new System.Drawing.Size(436, 5);
+            this.pnlDivider1.TabIndex = 5;
             // 
-            // lblBuying
+            // pnlDivider2
             // 
-            this.lblBuying.AutoSize = true;
-            this.lblBuying.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBuying.Location = new System.Drawing.Point(20, 9);
-            this.lblBuying.Name = "lblBuying";
-            this.lblBuying.Size = new System.Drawing.Size(107, 26);
-            this.lblBuying.TabIndex = 1;
-            this.lblBuying.Text = "ПОКУПКА:";
+            this.pnlDivider2.BackColor = System.Drawing.Color.Black;
+            this.pnlDivider2.Location = new System.Drawing.Point(448, 31);
+            this.pnlDivider2.Name = "pnlDivider2";
+            this.pnlDivider2.Size = new System.Drawing.Size(5, 486);
+            this.pnlDivider2.TabIndex = 6;
             // 
-            // pnlBuying
+            // lblBuyTotal
             // 
-            this.pnlBuying.BorderColor = System.Drawing.Color.Black;
-            this.pnlBuying.BorderRadius = 15;
-            this.pnlBuying.BorderThickness = 3;
-            this.pnlBuying.Controls.Add(this.cbTradingPlace1);
-            this.pnlBuying.Controls.Add(this.lblPlanetary1);
-            this.pnlBuying.Controls.Add(this.tbPrice);
-            this.pnlBuying.Controls.Add(this.lblTradingPlace1);
-            this.pnlBuying.Controls.Add(this.cbPlanetary1);
-            this.pnlBuying.Controls.Add(this.lblPrice);
-            this.pnlBuying.Controls.Add(this.lblPriceCurrency);
-            this.pnlBuying.Location = new System.Drawing.Point(18, 38);
-            this.pnlBuying.Name = "pnlBuying";
-            this.pnlBuying.ShadowDecoration.Parent = this.pnlBuying;
-            this.pnlBuying.Size = new System.Drawing.Size(861, 173);
-            this.pnlBuying.TabIndex = 5;
+            this.lblBuyTotal.AutoSize = true;
+            this.lblBuyTotal.BackColor = System.Drawing.Color.Tomato;
+            this.lblBuyTotal.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBuyTotal.Location = new System.Drawing.Point(13, 24);
+            this.lblBuyTotal.Name = "lblBuyTotal";
+            this.lblBuyTotal.Size = new System.Drawing.Size(170, 19);
+            this.lblBuyTotal.TabIndex = 1;
+            this.lblBuyTotal.Text = "Сумма закупки: 0 aUEC";
             // 
-            // pnlSelling
+            // lblSellTotal
             // 
-            this.pnlSelling.BorderColor = System.Drawing.Color.Black;
-            this.pnlSelling.BorderRadius = 15;
-            this.pnlSelling.BorderThickness = 3;
-            this.pnlSelling.Controls.Add(this.cbTradingPlace2);
-            this.pnlSelling.Controls.Add(this.tbSellPrice);
-            this.pnlSelling.Controls.Add(this.lblPlanetary2);
-            this.pnlSelling.Controls.Add(this.lblSellPrice);
-            this.pnlSelling.Controls.Add(this.lblTradingPlace2);
-            this.pnlSelling.Controls.Add(this.lblSellPriceCurrency);
-            this.pnlSelling.Controls.Add(this.cbPlanetary2);
-            this.pnlSelling.Location = new System.Drawing.Point(18, 243);
-            this.pnlSelling.Name = "pnlSelling";
-            this.pnlSelling.ShadowDecoration.Parent = this.pnlSelling;
-            this.pnlSelling.Size = new System.Drawing.Size(861, 173);
-            this.pnlSelling.TabIndex = 6;
+            this.lblSellTotal.AutoSize = true;
+            this.lblSellTotal.BackColor = System.Drawing.Color.DarkOliveGreen;
+            this.lblSellTotal.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSellTotal.Location = new System.Drawing.Point(13, 47);
+            this.lblSellTotal.Name = "lblSellTotal";
+            this.lblSellTotal.Size = new System.Drawing.Size(178, 19);
+            this.lblSellTotal.TabIndex = 1;
+            this.lblSellTotal.Text = "Сумма продажи: 0 aUEC";
             // 
-            // cbTradingPlace2
+            // lblFullTotal
             // 
-            this.cbTradingPlace2.BackColor = System.Drawing.Color.Transparent;
-            this.cbTradingPlace2.BorderColor = System.Drawing.Color.Black;
-            this.cbTradingPlace2.BorderRadius = 5;
-            this.cbTradingPlace2.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbTradingPlace2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbTradingPlace2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
-            this.cbTradingPlace2.FocusedColor = System.Drawing.Color.Empty;
-            this.cbTradingPlace2.FocusedState.Parent = this.cbTradingPlace2;
-            this.cbTradingPlace2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbTradingPlace2.ForeColor = System.Drawing.Color.Black;
-            this.cbTradingPlace2.FormattingEnabled = true;
-            this.cbTradingPlace2.HoverState.Parent = this.cbTradingPlace2;
-            this.cbTradingPlace2.ItemHeight = 30;
-            this.cbTradingPlace2.Items.AddRange(new object[] {
-            "ВЫБЕРИТЕ ПЛАНЕТАРНУЮ СИСТЕМУ"});
-            this.cbTradingPlace2.ItemsAppearance.Parent = this.cbTradingPlace2;
-            this.cbTradingPlace2.Location = new System.Drawing.Point(270, 39);
-            this.cbTradingPlace2.Name = "cbTradingPlace2";
-            this.cbTradingPlace2.ShadowDecoration.Parent = this.cbTradingPlace2;
-            this.cbTradingPlace2.Size = new System.Drawing.Size(548, 36);
-            this.cbTradingPlace2.TabIndex = 0;
+            this.lblFullTotal.AutoSize = true;
+            this.lblFullTotal.BackColor = System.Drawing.Color.Transparent;
+            this.lblFullTotal.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFullTotal.Location = new System.Drawing.Point(11, 80);
+            this.lblFullTotal.Name = "lblFullTotal";
+            this.lblFullTotal.Size = new System.Drawing.Size(184, 19);
+            this.lblFullTotal.TabIndex = 1;
+            this.lblFullTotal.Text = "Итого за поездку: 0 aUEC";
             // 
-            // lblPlanetary2
+            // pnlDivider3
             // 
-            this.lblPlanetary2.AutoSize = true;
-            this.lblPlanetary2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPlanetary2.Location = new System.Drawing.Point(6, 13);
-            this.lblPlanetary2.Name = "lblPlanetary2";
-            this.lblPlanetary2.Size = new System.Drawing.Size(165, 19);
-            this.lblPlanetary2.TabIndex = 1;
-            this.lblPlanetary2.Text = "Планетарная Система:";
+            this.pnlDivider3.BackColor = System.Drawing.Color.Black;
+            this.pnlDivider3.Location = new System.Drawing.Point(14, 357);
+            this.pnlDivider3.Name = "pnlDivider3";
+            this.pnlDivider3.Size = new System.Drawing.Size(436, 5);
+            this.pnlDivider3.TabIndex = 5;
             // 
-            // lblTradingPlace2
+            // tbBuyPlace
             // 
-            this.lblTradingPlace2.AutoSize = true;
-            this.lblTradingPlace2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTradingPlace2.Location = new System.Drawing.Point(265, 13);
-            this.lblTradingPlace2.Name = "lblTradingPlace2";
-            this.lblTradingPlace2.Size = new System.Drawing.Size(121, 19);
-            this.lblTradingPlace2.TabIndex = 1;
-            this.lblTradingPlace2.Text = "Торговая Точка:";
+            this.tbBuyPlace.BorderColor = System.Drawing.Color.Black;
+            this.tbBuyPlace.BorderRadius = 6;
+            this.tbBuyPlace.BorderThickness = 2;
+            this.tbBuyPlace.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbBuyPlace.DefaultText = "";
+            this.tbBuyPlace.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.tbBuyPlace.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.tbBuyPlace.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbBuyPlace.DisabledState.Parent = this.tbBuyPlace;
+            this.tbBuyPlace.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbBuyPlace.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
+            this.tbBuyPlace.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbBuyPlace.FocusedState.Parent = this.tbBuyPlace;
+            this.tbBuyPlace.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbBuyPlace.ForeColor = System.Drawing.Color.Black;
+            this.tbBuyPlace.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbBuyPlace.HoverState.Parent = this.tbBuyPlace;
+            this.tbBuyPlace.Location = new System.Drawing.Point(9, 370);
+            this.tbBuyPlace.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.tbBuyPlace.Name = "tbBuyPlace";
+            this.tbBuyPlace.PasswordChar = '\0';
+            this.tbBuyPlace.PlaceholderForeColor = System.Drawing.Color.Black;
+            this.tbBuyPlace.PlaceholderText = "Введите место покупки товара";
+            this.tbBuyPlace.SelectedText = "";
+            this.tbBuyPlace.ShadowDecoration.Parent = this.tbBuyPlace;
+            this.tbBuyPlace.Size = new System.Drawing.Size(436, 43);
+            this.tbBuyPlace.TabIndex = 2;
+            this.tbBuyPlace.TextChanged += new System.EventHandler(this.tbBuyPlace_TextChanged);
             // 
-            // cbPlanetary2
+            // tbSellPlace
             // 
-            this.cbPlanetary2.BackColor = System.Drawing.Color.Transparent;
-            this.cbPlanetary2.BorderColor = System.Drawing.Color.Black;
-            this.cbPlanetary2.BorderRadius = 5;
-            this.cbPlanetary2.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbPlanetary2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbPlanetary2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
-            this.cbPlanetary2.FocusedColor = System.Drawing.Color.Empty;
-            this.cbPlanetary2.FocusedState.Parent = this.cbPlanetary2;
-            this.cbPlanetary2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbPlanetary2.ForeColor = System.Drawing.Color.Black;
-            this.cbPlanetary2.FormattingEnabled = true;
-            this.cbPlanetary2.HoverState.Parent = this.cbPlanetary2;
-            this.cbPlanetary2.ItemHeight = 30;
-            this.cbPlanetary2.Items.AddRange(new object[] {
-            "ARC",
-            "ArcCorp",
-            "CRU",
-            "Crusader",
-            "HUR",
-            "Hurston",
-            "Microtech"});
-            this.cbPlanetary2.ItemsAppearance.Parent = this.cbPlanetary2;
-            this.cbPlanetary2.Location = new System.Drawing.Point(11, 39);
-            this.cbPlanetary2.Name = "cbPlanetary2";
-            this.cbPlanetary2.ShadowDecoration.Parent = this.cbPlanetary2;
-            this.cbPlanetary2.Size = new System.Drawing.Size(239, 36);
-            this.cbPlanetary2.StartIndex = 0;
-            this.cbPlanetary2.TabIndex = 0;
-            this.cbPlanetary2.SelectedIndexChanged += new System.EventHandler(this.cbPlanetary2_SelectedIndexChanged);
+            this.tbSellPlace.BorderColor = System.Drawing.Color.Black;
+            this.tbSellPlace.BorderRadius = 6;
+            this.tbSellPlace.BorderThickness = 2;
+            this.tbSellPlace.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbSellPlace.DefaultText = "";
+            this.tbSellPlace.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.tbSellPlace.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.tbSellPlace.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbSellPlace.DisabledState.Parent = this.tbSellPlace;
+            this.tbSellPlace.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbSellPlace.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
+            this.tbSellPlace.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbSellPlace.FocusedState.Parent = this.tbSellPlace;
+            this.tbSellPlace.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbSellPlace.ForeColor = System.Drawing.Color.Black;
+            this.tbSellPlace.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbSellPlace.HoverState.Parent = this.tbSellPlace;
+            this.tbSellPlace.Location = new System.Drawing.Point(9, 423);
+            this.tbSellPlace.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.tbSellPlace.Name = "tbSellPlace";
+            this.tbSellPlace.PasswordChar = '\0';
+            this.tbSellPlace.PlaceholderForeColor = System.Drawing.Color.Black;
+            this.tbSellPlace.PlaceholderText = "Введите место продажи товара";
+            this.tbSellPlace.SelectedText = "";
+            this.tbSellPlace.ShadowDecoration.Parent = this.tbSellPlace;
+            this.tbSellPlace.Size = new System.Drawing.Size(436, 43);
+            this.tbSellPlace.TabIndex = 2;
+            this.tbSellPlace.TextChanged += new System.EventHandler(this.tbSellPlace_TextChanged);
             // 
-            // lblSelling
+            // pnlStats
             // 
-            this.lblSelling.AutoSize = true;
-            this.lblSelling.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSelling.Location = new System.Drawing.Point(20, 214);
-            this.lblSelling.Name = "lblSelling";
-            this.lblSelling.Size = new System.Drawing.Size(112, 26);
-            this.lblSelling.TabIndex = 1;
-            this.lblSelling.Text = "ПРОДАЖА:";
-            // 
-            // btnCalculator
-            // 
-            this.btnCalculator.BorderRadius = 6;
-            this.btnCalculator.BorderThickness = 2;
-            this.btnCalculator.CheckedState.Parent = this.btnCalculator;
-            this.btnCalculator.CustomImages.Parent = this.btnCalculator;
-            this.btnCalculator.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
-            this.btnCalculator.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCalculator.ForeColor = System.Drawing.Color.Black;
-            this.btnCalculator.HoverState.Parent = this.btnCalculator;
-            this.btnCalculator.Location = new System.Drawing.Point(457, 428);
-            this.btnCalculator.Name = "btnCalculator";
-            this.btnCalculator.ShadowDecoration.Parent = this.btnCalculator;
-            this.btnCalculator.Size = new System.Drawing.Size(415, 43);
-            this.btnCalculator.TabIndex = 3;
-            this.btnCalculator.Text = "ОТКРЫТЬ КАЛЬКУЛЯТОР";
-            this.btnCalculator.Click += new System.EventHandler(this.btnCalculator_Click);
+            this.pnlStats.BorderColor = System.Drawing.Color.Black;
+            this.pnlStats.BorderRadius = 6;
+            this.pnlStats.BorderThickness = 5;
+            this.pnlStats.Controls.Add(this.lblSellTotal);
+            this.pnlStats.Controls.Add(this.lblBuyTotal);
+            this.pnlStats.Controls.Add(this.lblFullTotal);
+            this.pnlStats.Location = new System.Drawing.Point(12, 215);
+            this.pnlStats.Name = "pnlStats";
+            this.pnlStats.ShadowDecoration.Parent = this.pnlStats;
+            this.pnlStats.Size = new System.Drawing.Size(433, 124);
+            this.pnlStats.TabIndex = 7;
             // 
             // PageDeliveries
             // 
@@ -443,50 +320,48 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
             this.ClientSize = new System.Drawing.Size(898, 529);
-            this.Controls.Add(this.pnlSelling);
-            this.Controls.Add(this.pnlBuying);
-            this.Controls.Add(this.btnCalculator);
-            this.Controls.Add(this.btnAdd);
+            this.Controls.Add(this.pnlStats);
+            this.Controls.Add(this.pnlDivider2);
+            this.Controls.Add(this.pnlDivider3);
+            this.Controls.Add(this.pnlDivider1);
+            this.Controls.Add(this.pnlCargo);
+            this.Controls.Add(this.btnAddCargo);
+            this.Controls.Add(this.btnFinish);
+            this.Controls.Add(this.tbCargoPrice);
+            this.Controls.Add(this.tbSellPlace);
+            this.Controls.Add(this.tbBuyPlace);
             this.Controls.Add(this.tbCargoName);
+            this.Controls.Add(this.lblCargoTitle);
+            this.Controls.Add(this.lblCargoCurrency);
             this.Controls.Add(this.lblCargo);
-            this.Controls.Add(this.lblSelling);
-            this.Controls.Add(this.lblBuying);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "PageDeliveries";
             this.Text = "PageDeliveries";
             this.Load += new System.EventHandler(this.PageDeliveries_Load);
-            this.pnlBuying.ResumeLayout(false);
-            this.pnlBuying.PerformLayout();
-            this.pnlSelling.ResumeLayout(false);
-            this.pnlSelling.PerformLayout();
+            this.pnlStats.ResumeLayout(false);
+            this.pnlStats.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private Guna.UI2.WinForms.Guna2ComboBox cbPlanetary1;
-        private System.Windows.Forms.Label lblPlanetary1;
-        private Guna.UI2.WinForms.Guna2ComboBox cbTradingPlace1;
-        private System.Windows.Forms.Label lblTradingPlace1;
         private Guna.UI2.WinForms.Guna2TextBox tbCargoName;
         private System.Windows.Forms.Label lblCargo;
-        private Guna.UI2.WinForms.Guna2TextBox tbPrice;
-        private System.Windows.Forms.Label lblPrice;
-        private System.Windows.Forms.Label lblPriceCurrency;
-        private System.Windows.Forms.Label lblSellPrice;
-        private System.Windows.Forms.Label lblSellPriceCurrency;
-        private Guna.UI2.WinForms.Guna2TextBox tbSellPrice;
-        private Guna.UI2.WinForms.Guna2TileButton btnAdd;
-        private System.Windows.Forms.Label lblBuying;
-        private Guna.UI2.WinForms.Guna2Panel pnlBuying;
-        private Guna.UI2.WinForms.Guna2Panel pnlSelling;
-        private System.Windows.Forms.Label lblPlanetary2;
-        private Guna.UI2.WinForms.Guna2ComboBox cbPlanetary2;
-        private System.Windows.Forms.Label lblSelling;
-        private Guna.UI2.WinForms.Guna2ComboBox cbTradingPlace2;
-        private System.Windows.Forms.Label lblTradingPlace2;
-        private Guna.UI2.WinForms.Guna2TileButton btnCalculator;
+        private Guna.UI2.WinForms.Guna2TileButton btnFinish;
+        private System.Windows.Forms.FlowLayoutPanel pnlCargo;
+        private System.Windows.Forms.Label lblCargoTitle;
+        private Guna.UI2.WinForms.Guna2TileButton btnAddCargo;
+        private Guna.UI2.WinForms.Guna2TextBox tbCargoPrice;
+        private System.Windows.Forms.Label lblCargoCurrency;
+        private System.Windows.Forms.Panel pnlDivider1;
+        private System.Windows.Forms.Panel pnlDivider2;
+        private System.Windows.Forms.Label lblBuyTotal;
+        private System.Windows.Forms.Label lblSellTotal;
+        private System.Windows.Forms.Label lblFullTotal;
+        private System.Windows.Forms.Panel pnlDivider3;
+        private Guna.UI2.WinForms.Guna2TextBox tbBuyPlace;
+        private Guna.UI2.WinForms.Guna2TextBox tbSellPlace;
+        private Guna.UI2.WinForms.Guna2Panel pnlStats;
     }
 }
