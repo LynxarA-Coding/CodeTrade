@@ -21,6 +21,7 @@ namespace CodeTrade.Pages
         {
             InitializeComponent();
         }
+        public int language = 0;
 
         public List<Data.Delivery> Deliveries = new List<Data.Delivery>();
         private List<int> Gains = new List<int>();
@@ -45,13 +46,13 @@ namespace CodeTrade.Pages
 
             chart1.AxisX.Add(new LiveCharts.Wpf.Axis
             {
-                Title = "Дата",
+                Title = language == 1 ? "Дата" : "Date",
                 Labels = dates
             });
 
             chart1.AxisY.Add(new LiveCharts.Wpf.Axis
             {
-                Title = "Сумма",
+                Title = language == 1 ? "Сумма" : "Total",
                 LabelFormatter = value => value + " aUEC"
             });
 
@@ -61,8 +62,8 @@ namespace CodeTrade.Pages
             chart1.Series.Clear();
             SeriesCollection series = new SeriesCollection();
 
-            series.Add(new LineSeries() { Title = "Прибыль", Values = new ChartValues<int>(Gains) });
-            series.Add(new LineSeries() { Title = "Траты", Values = new ChartValues<int>(Expenses) });
+            series.Add(new LineSeries() { Title = language == 1 ? "Прибыль" : "Profit", Values = new ChartValues<int>(Gains) });
+            series.Add(new LineSeries() { Title = language == 1 ? "Траты" : "Expenses", Values = new ChartValues<int>(Expenses) });
             chart1.Series = series;
         }
 
@@ -91,7 +92,7 @@ namespace CodeTrade.Pages
                 lblId.AutoSize = true;
                 lblId.Font = new Font("Calibri", 10, FontStyle.Bold);
                 lblId.Name = "id" + counter;
-                lblId.Text = "ID: " + delivery.id + " | Дата: " + delivery.DeliveryDate;
+                lblId.Text = language == 1 ? "ID: " + delivery.id + " | Дата: " + delivery.DeliveryDate : "ID: " + delivery.id + " | Date: " + delivery.DeliveryDate;
                 lblId.Location = new Point(6, 9);
                 panel.Controls.Add(lblId);
 
@@ -99,7 +100,7 @@ namespace CodeTrade.Pages
                 lblpickup.AutoSize = true;
                 lblpickup.Font = new Font("Calibri", 10, FontStyle.Bold);
                 lblpickup.Name = "lblpickup" + counter;
-                lblpickup.Text = "Место получения: " + delivery.PickupPosName;
+                lblpickup.Text = language == 1 ? "Место получения: " + delivery.PickupPosName : "Pickup Place: " + delivery.PickupPosName;
                 lblpickup.Location = new Point(6, 24);
                 panel.Controls.Add(lblpickup);
 
@@ -107,7 +108,7 @@ namespace CodeTrade.Pages
                 lbldrop.AutoSize = true;
                 lbldrop.Font = new Font("Calibri", 10, FontStyle.Bold);
                 lbldrop.Name = "lbldrop" + counter;
-                lbldrop.Text = "Место доставки: " + delivery.DestinationPosName;
+                lbldrop.Text = language == 1 ? "Место доставки: " + delivery.DestinationPosName : "Destination Place: " + delivery.DestinationPosName;
                 lbldrop.Location = new Point(6, 39);
                 panel.Controls.Add(lbldrop);
 
@@ -115,7 +116,7 @@ namespace CodeTrade.Pages
                 lblcargo.AutoSize = true;
                 lblcargo.Font = new Font("Calibri", 10, FontStyle.Bold);
                 lblcargo.Name = "lblcargo" + counter;
-                lblcargo.Text = "Товар: " + delivery.GoodsName;
+                lblcargo.Text = language == 1 ? "Товар: " + delivery.GoodsName : "Goods: " + delivery.GoodsName;
                 lblcargo.Location = new Point(6, 54);
                 panel.Controls.Add(lblcargo);
 
@@ -124,7 +125,7 @@ namespace CodeTrade.Pages
                 lblprice.Font = new Font("Calibri", 10, FontStyle.Bold);
                 lblprice.ForeColor = Color.Red;
                 lblprice.Name = "lblprice" + counter;
-                lblprice.Text = "Цена покупки: " + delivery.BuyPrice + " aUEC";
+                lblprice.Text = language == 1 ? "Цена покупки: " + delivery.BuyPrice + " aUEC" : "Buy Price: " + delivery.BuyPrice + " aUEC";
                 lblprice.Location = new Point(6, 90);
                 panel.Controls.Add(lblprice);
 
@@ -133,7 +134,7 @@ namespace CodeTrade.Pages
                 lblsell.Font = new Font("Calibri", 10, FontStyle.Bold);
                 lblsell.ForeColor = Color.Lime;
                 lblsell.Name = "lblsell" + counter;
-                lblsell.Text = "Цена продажи: " + delivery.SellPrice + " aUEC";
+                lblsell.Text = language == 1 ? "Цена продажи: " + delivery.SellPrice + " aUEC" : "Sell Price: " + delivery.SellPrice + " aUEC";
                 lblsell.Location = new Point(6, 105);
                 panel.Controls.Add(lblsell);
 
@@ -143,6 +144,13 @@ namespace CodeTrade.Pages
                 counter++;
             }
         }
+
+        private void ChangeLanguageVisuals()
+        {
+            lblData.Text = language == 1 ? "Последние 5 Маршрутов:" : "Last 5 Routes:";
+            lblTotalTemp.Text = language == 1 ? "Промежуточная прибыль: 0 aUEC" : "Intermediate profit: 0 aUEC";
+            lblTotal.Text = language == 1 ? "Конечная прибыль: 0 aUEC" : "Final profit: 0 aUEC";
+        } 
 
         private void CalculateTotal()
         {
@@ -155,7 +163,7 @@ namespace CodeTrade.Pages
                 lblTotalTemp.ForeColor = Color.Red;    
             }
 
-            lblTotalTemp.Text = "Промежуточная прибыль: " + totalTemp + " aUEC";
+            lblTotalTemp.Text = language == 1 ? "Промежуточная прибыль: " + totalTemp + " aUEC" : "Intermediate profit: " + totalTemp + " aUEC";
 
             foreach (int bought in Expenses)
             {
@@ -176,10 +184,11 @@ namespace CodeTrade.Pages
                 lblTotal.ForeColor = Color.Red;
             }
 
-            lblTotal.Text = "Конечная прибыль: " + total + " aUEC";
+            lblTotal.Text = language == 1 ? "Конечная прибыль: " + total + " aUEC" : "Final profit: " + total + " aUEC";
         }
         private void PageDashboard_Load(object sender, EventArgs e)
         {
+            ChangeLanguageVisuals();
             FillGraph();
             FillDataSet();
             CalculateTotal();

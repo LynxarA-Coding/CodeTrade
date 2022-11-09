@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CodeTrade.Properties;
 
 namespace CodeTrade
 {
@@ -20,6 +21,7 @@ namespace CodeTrade
         }
 
         private int tick;
+        private int language = 0;
 
         private void CheckJson()
         {
@@ -42,6 +44,17 @@ namespace CodeTrade
 
         private void Loading_Load(object sender, EventArgs e)
         {
+            if (Settings.Default["Language"].ToString() == "English")
+            {
+                language = 0;
+                lblLoading.Text = "Loading...";
+            }
+            else
+            {
+                language = 1;
+                lblLoading.Text = "Загрузка...";
+            }
+            
             lblLoading.Left = (this.Width - lblLoading.Width) / 2;
             pictureBox1.Left = (this.Width - pictureBox1.Width) / 2;
             pBar.Value = 0;
@@ -65,6 +78,7 @@ namespace CodeTrade
             {
                 loadTimer.Stop();
                 ((Main)this.Owner).LoadComplete();
+                
                 this.Close();
             }
         }

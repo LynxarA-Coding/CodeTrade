@@ -12,6 +12,8 @@ using Guna.UI2.WinForms;
 using Newtonsoft.Json;
 using Guna.UI2.WinForms.Helpers;
 using System.Windows.Markup;
+using CodeTrade.Properties;
+using System.Diagnostics.Contracts;
 
 namespace CodeTrade
 {
@@ -28,6 +30,8 @@ namespace CodeTrade
         
         public List<Data.Delivery> Deliveries = new List<Data.Delivery>();
         public List<string[]> Locations = new List<string[]>();
+
+        public int language = 0;
 
         public void SaveDeliveries()
         {
@@ -52,14 +56,15 @@ namespace CodeTrade
                     PreviousBtn = 1;
                     PageDeliveries page1 = new PageDeliveries() { Owner = this };
                     page1.TopLevel = false;
+                    page1.language = language;
                     page1.Deliveries = Deliveries;
                     page1.Locations = Locations;
                     pnlPage.Controls.Add(page1);
                     page1.Show();
                     Buttons[1].FillColor = ColorTranslator.FromHtml("#800E13");
                     Main own1 = (Main)this.Owner;
-                    own1.Text = "CodeTrade | Доставки";
-                    own1.lblTitle.Text = "CODΞTrade | Доставки";
+                    own1.Text = language == 1 ? "CodeTrade | Доставки" : "CodeTrade | Deliveries";
+                    own1.lblTitle.Text = language == 1 ? "CODΞTrade | Доставки" : "CODΞTrade | Deliveries";
                     break;
                 case 2:
                     pnlPage.Controls.Clear();
@@ -68,12 +73,13 @@ namespace CodeTrade
                     PageLogs page2 = new PageLogs() { Owner = this };
                     page2.TopLevel = false;
                     pnlPage.Controls.Add(page2);
+                    page2.language = language;
                     page2.Deliveries = Deliveries;
                     page2.Show();
                     Buttons[2].FillColor = ColorTranslator.FromHtml("#800E13");
                     Main own2 = (Main)this.Owner;
-                    own2.Text = "CodeTrade | Логи";
-                    own2.lblTitle.Text = "CODΞTrade | Логи";
+                    own2.Text = language == 1 ? "CodeTrade | Логи" : "CodeTrade | Logs";
+                    own2.lblTitle.Text = language == 1 ? "CODΞTrade | Логи" : "CODΞTrade | Logs";
                     break;
                 case 3:
                     pnlPage.Controls.Clear();
@@ -82,11 +88,12 @@ namespace CodeTrade
                     PageSettings page3 = new PageSettings() { Owner = this };
                     page3.TopLevel = false;
                     pnlPage.Controls.Add(page3);
+                    page3.language = language;
                     page3.Show();
                     Buttons[3].FillColor = ColorTranslator.FromHtml("#800E13");
                     Main own3 = (Main)this.Owner;
-                    own3.Text = "CodeTrade | Настройки";
-                    own3.lblTitle.Text = "CODΞTrade | Настройки";
+                    own3.Text = language == 1 ? "CodeTrade | Настройки" : "CodeTrade | Settings";
+                    own3.lblTitle.Text = language == 1 ? "CODΞTrade | Настройки" : "CODΞTrade | Settings";
                     break;
                 default:
                     pnlPage.Controls.Clear();
@@ -95,18 +102,37 @@ namespace CodeTrade
                     PageDashboard page = new PageDashboard() { Owner = this };
                     page.TopLevel = false;
                     pnlPage.Controls.Add(page);
+                    page.language = language;
                     page.Deliveries = Deliveries;
                     page.Show();
                     Buttons[0].FillColor = ColorTranslator.FromHtml("#800E13");
                     Main own = (Main)this.Owner;
-                    own.Text = "CodeTrade | Панель";
-                    own.lblTitle.Text = "CODΞTrade | Панель";
+                    own.Text = language == 1 ? "CodeTrade | Панель" : "CodeTrade | Dashboard";
+                    own.lblTitle.Text = language == 1 ? "CODΞTrade | Панель" : "CODΞTrade | Dashboard";
                     break;
             }
         }
 
+        public void ChangeLanguage()
+        {
+            btnDashboard.Text = language == 1 ? "ПАНЕЛЬ" : "DASHBOARD";
+            btnDeliveries.Text = language == 1 ? "ДОСТАВКИ" : "DELIVERIES";
+            btnLogs.Text = language == 1 ? "ЛОГИ" : "LOGS";
+            btnSettings.Text = language == 1 ? "НАСТРОЙКИ" : "SETTINGS";
+        }
+
         private void Dashboard_Load(object sender, EventArgs e)
         {
+            if (Settings.Default["Language"].ToString() == "Russian")
+            {
+                language = 1;
+            }
+            else if (Settings.Default["Language"].ToString() == "English")
+            {
+                language = 0;
+            }
+            ChangeLanguage();
+            
             Buttons.Clear();
             Buttons.Add(btnDashboard);
             Buttons.Add(btnDeliveries);

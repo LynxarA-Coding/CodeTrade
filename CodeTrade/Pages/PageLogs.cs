@@ -17,6 +17,8 @@ namespace CodeTrade.Pages
             InitializeComponent();
         }
 
+        public int language = 0;
+
         public List<Data.Delivery> Deliveries = new List<Data.Delivery>();
 
         private void PageLogs_Load(object sender, EventArgs e)
@@ -25,11 +27,11 @@ namespace CodeTrade.Pages
             {
                 string row = "";
                 row += "ID: " + delivery.id + " ";
-                row += "Дата: " + delivery.DeliveryDate + " | ";
-                row += "Товар: " + delivery.GoodsName + "; ";
-                row += "Из: \"" + delivery.PickupPosName + "\" ";
-                row += " В: \"" + delivery.DestinationPosName + "\"; ";
-                row += "Профит: " + (delivery.SellPrice - delivery.BuyPrice);
+                row += language == 1 ? "Дата: " + delivery.DeliveryDate + " | " : "Data: " + delivery.DeliveryDate + " | ";
+                row += language == 1 ? "Товар: " + delivery.GoodsName + "; " : "Cargo: " + delivery.GoodsName + "; ";
+                row += language == 1 ? "Из: \"" + delivery.PickupPosName + "\" " : "From: \"" + delivery.PickupPosName + "\" ";
+                row += language == 1 ? " В: \"" + delivery.DestinationPosName + "\"; " : " To: \"" + delivery.DestinationPosName + "\"";
+                row += language == 1 ? "Профит: " + (delivery.SellPrice - delivery.BuyPrice) : "Profit: " + (delivery.SellPrice - delivery.BuyPrice);
                 row += Environment.NewLine + "--------------------------------------------------------------------------------------------------------------------------------------------" + Environment.NewLine;
 
                 tbLogs.Text += row;
