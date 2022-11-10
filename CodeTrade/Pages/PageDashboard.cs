@@ -36,7 +36,6 @@ namespace CodeTrade.Pages
 
         private void FillGraph()
         {
-            chart1.ScrollMode = ScrollMode.X;
             foreach (Data.Delivery delivery in Deliveries)
             {
                 Gains.Add(delivery.SellPrice);
@@ -65,13 +64,25 @@ namespace CodeTrade.Pages
             series.Add(new LineSeries() { Title = language == 1 ? "Прибыль" : "Profit", Values = new ChartValues<int>(Gains) });
             series.Add(new LineSeries() { Title = language == 1 ? "Траты" : "Expenses", Values = new ChartValues<int>(Expenses) });
             chart1.Series = series;
+
+            chart1.ScrollMode = ScrollMode.XY;
+            chart1.Zoom = ZoomingOptions.Xy;
         }
 
         private void FillDataSet()
         {
             int counter = 0;
+            if (panels.Count > 0)
+            {
+                foreach (Guna2Panel panel in panels)
+                {
+                    dataSet.Controls.Remove(panel);
+                }
 
-            int last = Deliveries.Count <= 6 ? 0 : Deliveries.Count - 6;
+                panels.Clear();
+            }
+
+            int last = Deliveries.Count <= (cbRouteCount.SelectedIndex + 1) ? 0 : Deliveries.Count - (cbRouteCount.SelectedIndex + 1);
             for (int i = Deliveries.Count - 1; i >= last; i--)
             {
                 Data.Delivery delivery = Deliveries[i];
@@ -147,24 +158,53 @@ namespace CodeTrade.Pages
 
         private void ChangeLanguageVisuals()
         {
-            lblData.Text = language == 1 ? "Последние 5 Маршрутов:" : "Last 5 Routes:";
+            lblData.Text = language == 1 ? "Последние 5 Маршрутов (всего: 5):" : "Last 5 Routes (total: 5):";
             lblTotalTemp.Text = language == 1 ? "Промежуточная прибыль: 0 aUEC" : "Intermediate profit: 0 aUEC";
             lblTotal.Text = language == 1 ? "Конечная прибыль: 0 aUEC" : "Final profit: 0 aUEC";
+            
+            if (language == 1)
+            {
+                cbRouteCount.Items.Clear();
+                cbRouteCount.Items.Add("Показать: 1");
+                cbRouteCount.Items.Add("Показать: 2");
+                cbRouteCount.Items.Add("Показать: 3");
+                cbRouteCount.Items.Add("Показать: 4");
+                cbRouteCount.Items.Add("Показать: 5");
+            }
+            else
+            {
+                cbRouteCount.Items.Clear();
+                cbRouteCount.Items.Add("Show: 1");
+                cbRouteCount.Items.Add("Show: 2");
+                cbRouteCount.Items.Add("Show: 3");
+                cbRouteCount.Items.Add("Show: 4");
+                cbRouteCount.Items.Add("Show: 5");
+            }
         } 
 
         private void CalculateTotal()
         {
+            int amount = cbRouteCount.SelectedIndex + 1;
+
+            totalTemp = 0;
+            for (int i = Deliveries.Count - 1; i >= Deliveries.Count - amount; i--)
+            {
+                totalTemp += Deliveries[i].SellPrice - Deliveries[i].BuyPrice;
+            }
+
+
             if (totalTemp >= 0)
             {
                 lblTotalTemp.ForeColor = Color.Lime;
             }
             else
             {
-                lblTotalTemp.ForeColor = Color.Red;    
+                lblTotalTemp.ForeColor = Color.Red;
             }
 
             lblTotalTemp.Text = language == 1 ? "Промежуточная прибыль: " + totalTemp + " aUEC" : "Intermediate profit: " + totalTemp + " aUEC";
 
+            total = 0;
             foreach (int bought in Expenses)
             {
                 total -= bought;
@@ -191,7 +231,54 @@ namespace CodeTrade.Pages
             ChangeLanguageVisuals();
             FillGraph();
             FillDataSet();
+            cbRouteCount.SelectedIndex = 0;
             CalculateTotal();
+        }
+
+        private void cbRouteCount_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (Deliveries.Count != 0)
+            {
+                int amount = Deliveries.Count;
+
+                while (amount < cbRouteCount.SelectedIndex + 1)
+                {
+                    cbRouteCount.SelectedIndex--;
+                }
+
+                if (language == 1)
+                {
+                    switch (cbRouteCount.SelectedIndex)
+                    {
+                        case 0:
+                            lblData.Text = $"Последний маршрут (всего: {Deliveries.Count}):";
+                            break;
+                        case 1:
+                            lblData.Text = $"Последние 2 маршрута (всего: {Deliveries.Count}):";
+                            break;
+                        case 2:
+                            lblData.Text = $"Последние 3 маршрута (всего: {Deliveries.Count}):";
+                            break;
+                        case 3:
+                            lblData.Text = $"Последние 4 маршрута (всего: {Deliveries.Count}):";
+                            break;
+                        case 4:
+                            lblData.Text = $"Последние 5 маршрутов (всего: {Deliveries.Count}):";
+                            break;
+                    }
+                }
+                else
+                {
+                    lblData.Text = $"Last {cbRouteCount.SelectedIndex + 1} Routes (total: {Deliveries.Count}):";
+                }
+
+                FillDataSet();
+                CalculateTotal();
+            }
+            else
+            {
+                lblData.Text = language == 1 ? "Маршруты::" : "Routes:";
+            }
         }
     }
 }
