@@ -113,7 +113,7 @@ namespace CodeTrade
             }
         }
 
-        public void ChangeLanguage()
+        public void UpdateLanguage()
         {
             btnDashboard.Text = language == 1 ? "ПАНЕЛЬ" : "DASHBOARD";
             btnDeliveries.Text = language == 1 ? "ДОСТАВКИ" : "DELIVERIES";
@@ -131,7 +131,7 @@ namespace CodeTrade
             {
                 language = 0;
             }
-            ChangeLanguage();
+            UpdateLanguage();
             
             Buttons.Clear();
             Buttons.Add(btnDashboard);

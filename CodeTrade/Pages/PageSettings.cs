@@ -34,6 +34,11 @@ namespace CodeTrade.Pages
 
         private void PageSettings_Load(object sender, EventArgs e)
         {
+            UpdateLanguage();
+        }
+
+        private void UpdateLanguage()
+        {
             lblLanguage.Text = language == 1 ? "Язык" : "Language";
             lblDeleteData.Text = language == 1 ? "Удаляет все логированные маршруты за всё время (невозможно восстановить)" : "Deletes all logged routes for all time (cannot be restored)";
             btnDeleteData.Text = language == 1 ? "УДАЛИТЬ ДАННЫЕ" : "DELETE DATA";
@@ -48,7 +53,7 @@ namespace CodeTrade.Pages
                     language = 0;
                     Dashboard dash = (Dashboard)this.Owner;
                     dash.language = language;
-                    dash.ChangeLanguage();
+                    dash.UpdateLanguage();
                     Settings.Default["Language"] = "English";
                     Settings.Default.Save();
                     break;
@@ -56,11 +61,12 @@ namespace CodeTrade.Pages
                     language = 1;
                     Dashboard dash1 = (Dashboard)this.Owner;
                     dash1.language = language;
-                    dash1.ChangeLanguage();
+                    dash1.UpdateLanguage();
                     Settings.Default["Language"] = "Russian";
                     Settings.Default.Save();
                     break;
             }
+            UpdateLanguage();
         }
     }
 }
