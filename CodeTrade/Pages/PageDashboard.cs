@@ -190,45 +190,48 @@ namespace CodeTrade.Pages
         {
             int amount = cbRouteCount.SelectedIndex + 1;
 
-            totalTemp = 0;
-            for (int i = Deliveries.Count - 1; i >= Deliveries.Count - amount; i--)
+            if (Deliveries.Count > 0)
             {
-                totalTemp += Deliveries[i].SellPrice - Deliveries[i].BuyPrice;
-            }
+                totalTemp = 0;
+                for (int i = Deliveries.Count - 1; i >= Deliveries.Count - amount; i--)
+                {
+                    totalTemp += Deliveries[i].SellPrice - Deliveries[i].BuyPrice;
+                }
 
 
-            if (totalTemp >= 0)
-            {
-                lblTotalTemp.ForeColor = Color.Lime;
-            }
-            else
-            {
-                lblTotalTemp.ForeColor = Color.Red;
-            }
+                if (totalTemp >= 0)
+                {
+                    lblTotalTemp.ForeColor = Color.Lime;
+                }
+                else
+                {
+                    lblTotalTemp.ForeColor = Color.Red;
+                }
 
-            lblTotalTemp.Text = language == 1 ? "Промежуточная прибыль: " + totalTemp + " aUEC" : "Intermediate profit: " + totalTemp + " aUEC";
+                lblTotalTemp.Text = language == 1 ? "Промежуточная прибыль: " + totalTemp + " aUEC" : "Intermediate profit: " + totalTemp + " aUEC";
 
-            total = 0;
-            foreach (int bought in Expenses)
-            {
-                total -= bought;
-            }
+                total = 0;
+                foreach (int bought in Expenses)
+                {
+                    total -= bought;
+                }
 
-            foreach (int sold in Gains)
-            {
-                total += sold;
-            }
+                foreach (int sold in Gains)
+                {
+                    total += sold;
+                }
 
-            if (total >= 0)
-            {
-                lblTotal.ForeColor = Color.Lime;
-            }
-            else
-            {
-                lblTotal.ForeColor = Color.Red;
-            }
+                if (total >= 0)
+                {
+                    lblTotal.ForeColor = Color.Lime;
+                }
+                else
+                {
+                    lblTotal.ForeColor = Color.Red;
+                }
 
-            lblTotal.Text = language == 1 ? "Конечная прибыль: " + total + " aUEC" : "Final profit: " + total + " aUEC";
+                lblTotal.Text = language == 1 ? "Конечная прибыль: " + total + " aUEC" : "Final profit: " + total + " aUEC";
+            }
         }
         private void PageDashboard_Load(object sender, EventArgs e)
         {
