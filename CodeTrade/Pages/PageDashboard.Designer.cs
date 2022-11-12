@@ -40,9 +40,9 @@
             // 
             this.chart1.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chart1.ForeColor = System.Drawing.Color.White;
-            this.chart1.Location = new System.Drawing.Point(41, 12);
+            this.chart1.Location = new System.Drawing.Point(12, 12);
             this.chart1.Name = "chart1";
-            this.chart1.Size = new System.Drawing.Size(450, 509);
+            this.chart1.Size = new System.Drawing.Size(479, 509);
             this.chart1.TabIndex = 0;
             this.chart1.Text = "cartesianChart1";
             // 
@@ -114,6 +114,7 @@
             this.cbRouteCount.ShadowDecoration.Parent = this.cbRouteCount;
             this.cbRouteCount.Size = new System.Drawing.Size(232, 36);
             this.cbRouteCount.StartIndex = 4;
+            this.cbRouteCount.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.cbRouteCount.TabIndex = 3;
             this.cbRouteCount.SelectedIndexChanged += new System.EventHandler(this.cbRouteCount_SelectedIndexChanged);
             // 

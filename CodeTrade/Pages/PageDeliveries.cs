@@ -35,19 +35,29 @@ namespace CodeTrade.Pages
         {
             LoadLanguage();
             CalculateTotal();
+            
+            tbBuyPlace.AutoCompleteCustomSource = new AutoCompleteStringCollection();
+            tbSellPlace.AutoCompleteCustomSource = new AutoCompleteStringCollection();
+            foreach (string[] location in Locations)
+            {
+                for (int i = 0; i < location.Length; i++)
+                {
+                    tbBuyPlace.AutoCompleteCustomSource.Add(location[i]);
+                    tbSellPlace.AutoCompleteCustomSource.Add(location[i]);
+                }
+            }
         }
 
         private void LoadLanguage()
         {
             lblCargo.Text = language == 1 ? "Название Груза:" : "Cargo Name:";
-            tbCargoName.PlaceholderText = language == 1 ? "Введите название товара" : "Enter cargo name";
             tbCargoPrice.PlaceholderText = language == 1 ? "Введите цену товара" : "Enter cargo price";
             btnAddCargo.Text = language == 1 ? "ДОБАВИТЬ ТОВАР НА КОРАБЛЬ" : "ADD CARGO TO SHIP";
             lblBuyTotal.Text = language == 1 ? "Сумма закупки: 0 aUEC" : "Buy total: 0 aUEC";
             lblSellTotal.Text = language == 1 ? "Сумма продажи: 0 aUEC" : "Sell total: 0 aUEC";
             lblFullTotal.Text = language == 1 ? "Итого за поездку: 0 aUEC" : "Trip total: 0 aUEC";
-            tbBuyPlace.Text = language == 1 ? "Введите место покупки товара" : "Enter pickup location";
-            tbSellPlace.Text = language == 1 ? "Введите место продажи товара" : "Enter dropoff location";
+            lblBuyPlace.Text = language == 1 ? "Место: покупки товара" : "Pickup location:";
+            lblSellPlace.Text = language == 1 ? "Место продажи товара" : "Dropoff location:";
             btnFinish.Text = language == 1 ? "ЗАВЕРШИТЬ ПОЕЗДКУ" : "FINISH TRIP";
             lblCargoTitle.Text = language == 1 ? "Товары на корабле:" : "Cargo on ship:";
         }
@@ -90,14 +100,14 @@ namespace CodeTrade.Pages
 
         private void btnAddCargo_Click(object sender, EventArgs e)
         {
-            if (tbCargoName.Text.Length > 4 && tbCargoPrice.Text.Length > 0)
+            if (tbCargoPrice.Text.Length > 0)
             {
                 int price = Convert.ToInt32(tbCargoPrice.Text);
 
                 if (price > 0)
                 {
                     Cargo newCargo = new Cargo();
-                    newCargo.Name = tbCargoName.Text;
+                    newCargo.Name = cbCargoName.SelectedItem.ToString();
                     newCargo.BuyPrice = price;
                     ShipCargo.Add(newCargo);
                     CalculateTotal();
@@ -167,6 +177,8 @@ namespace CodeTrade.Pages
 
                     pnlCargo.Controls.Add(newPanel);
                     CargoSquares.Add(newPanel);
+
+                    tbCargoPrice.Text = "";
                 }
                 else
                 {
@@ -316,19 +328,29 @@ namespace CodeTrade.Pages
                 }
                 return;
             }
-
-            // Save Delivery
+            
+            
             Data.Delivery delivery = new Data.Delivery();
             delivery.id = Deliveries.Count;
             delivery.PickupPosName = tbBuyPlace.Text;
             delivery.DestinationPosName = tbSellPlace.Text;
 
+            List<string> DeliveryCargo = new List<string>();
             string goods = "";
             foreach (Cargo cargo in ShipCargo)
             {
-                goods += $"{cargo.Name},";
+                if (!DeliveryCargo.Contains(cargo.Name))
+                {
+                    DeliveryCargo.Add(cargo.Name);
+                } 
+                
             }
-            goods = goods.Remove(goods.Length - 1);
+
+            foreach (string cargo in DeliveryCargo)
+            {
+                goods += cargo + ", ";
+            }
+            goods = goods.Remove(goods.Length - 2);
 
             delivery.GoodsName = goods;
             DateTime date = DateTime.Now;
@@ -343,7 +365,7 @@ namespace CodeTrade.Pages
             dash.SaveDeliveries();
 
             // Reset Page
-            tbCargoName.Text = "";
+            cbCargoName.SelectedIndex = 0;
             tbCargoPrice.Text = "";
 
             ShipCargo.Clear();

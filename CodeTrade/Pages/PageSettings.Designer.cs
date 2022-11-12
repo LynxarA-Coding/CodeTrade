@@ -86,6 +86,7 @@
             this.cbLanguage.ShadowDecoration.Parent = this.cbLanguage;
             this.cbLanguage.Size = new System.Drawing.Size(415, 36);
             this.cbLanguage.StartIndex = 1;
+            this.cbLanguage.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.cbLanguage.TabIndex = 6;
             this.cbLanguage.SelectedIndexChanged += new System.EventHandler(this.cbLanguage_SelectedIndexChanged);
             // 

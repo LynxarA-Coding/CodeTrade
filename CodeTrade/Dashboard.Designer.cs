@@ -69,11 +69,11 @@
             this.lblCopyright.AutoSize = true;
             this.menuTransition.SetDecoration(this.lblCopyright, Guna.UI2.AnimatorNS.DecorationType.None);
             this.lblCopyright.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCopyright.Location = new System.Drawing.Point(1, 528);
+            this.lblCopyright.Location = new System.Drawing.Point(5, 499);
             this.lblCopyright.Name = "lblCopyright";
-            this.lblCopyright.Size = new System.Drawing.Size(153, 13);
+            this.lblCopyright.Size = new System.Drawing.Size(98, 39);
             this.lblCopyright.TabIndex = 0;
-            this.lblCopyright.Text = "by LynX @2022 | CODEGAMING";
+            this.lblCopyright.Text = "by LynxarA @2022 \r\nDiscord: LynX#6969\r\nCODEGAMING Corp";
             // 
             // btnSettings
             // 

@@ -37,6 +37,7 @@
             this.pnlMain = new System.Windows.Forms.Panel();
             this.dragHeader = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.elipse = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.lblTag = new System.Windows.Forms.Label();
             this.pnlHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnHide)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnExit)).BeginInit();
@@ -45,6 +46,7 @@
             // pnlHeader
             // 
             this.pnlHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(4)))), ((int)(((byte)(14)))));
+            this.pnlHeader.Controls.Add(this.lblTag);
             this.pnlHeader.Controls.Add(this.lblTitle);
             this.pnlHeader.Controls.Add(this.btnHide);
             this.pnlHeader.Controls.Add(this.btnExit);
@@ -59,7 +61,7 @@
             this.lblTitle.AutoSize = true;
             this.lblTitle.Font = new System.Drawing.Font("Calibri", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
-            this.lblTitle.Location = new System.Drawing.Point(12, 9);
+            this.lblTitle.Location = new System.Drawing.Point(11, 2);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(165, 39);
             this.lblTitle.TabIndex = 1;
@@ -96,6 +98,7 @@
             this.pnlMain.Name = "pnlMain";
             this.pnlMain.Size = new System.Drawing.Size(950, 544);
             this.pnlMain.TabIndex = 1;
+            this.pnlMain.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlMain_Paint);
             // 
             // dragHeader
             // 
@@ -105,6 +108,17 @@
             // 
             this.elipse.BorderRadius = 25;
             this.elipse.TargetControl = this;
+            // 
+            // lblTag
+            // 
+            this.lblTag.AutoSize = true;
+            this.lblTag.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTag.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
+            this.lblTag.Location = new System.Drawing.Point(17, 37);
+            this.lblTag.Name = "lblTag";
+            this.lblTag.Size = new System.Drawing.Size(153, 14);
+            this.lblTag.TabIndex = 2;
+            this.lblTag.Text = "Release v 1.1.0 | by lynxara";
             // 
             // Main
             // 
@@ -137,6 +151,7 @@
         private Guna.UI2.WinForms.Guna2Elipse elipse;
         private System.Windows.Forms.PictureBox btnHide;
         public System.Windows.Forms.Label lblTitle;
+        private System.Windows.Forms.Label lblTag;
     }
 }
 

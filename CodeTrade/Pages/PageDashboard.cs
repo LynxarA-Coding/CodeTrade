@@ -61,8 +61,8 @@ namespace CodeTrade.Pages
             chart1.Series.Clear();
             SeriesCollection series = new SeriesCollection();
 
-            series.Add(new LineSeries() { Title = language == 1 ? "Прибыль" : "Profit", Values = new ChartValues<int>(Gains) });
-            series.Add(new LineSeries() { Title = language == 1 ? "Траты" : "Expenses", Values = new ChartValues<int>(Expenses) });
+            series.Add(new LineSeries() { Title = language == 1 ? "Прибыль" : "Profit", Values = new ChartValues<int>(Gains), LineSmoothness = 0.8});
+            series.Add(new LineSeries() { Title = language == 1 ? "Траты" : "Expenses", Values = new ChartValues<int>(Expenses), LineSmoothness = 0.8});
             chart1.Series = series;
 
             chart1.ScrollMode = ScrollMode.XY;
@@ -87,16 +87,17 @@ namespace CodeTrade.Pages
             {
                 Data.Delivery delivery = Deliveries[i];
                 totalTemp += delivery.SellPrice - delivery.BuyPrice;
-
-                // panel
+                
                 Guna2Panel panel = new Guna2Panel();
                 panel.BackColor = Color.Transparent;
                 panel.BorderColor = Color.Black;
-                panel.BorderRadius = 15;
-                panel.BorderThickness = 2;
+                panel.BorderRadius = 5;
+                panel.BorderThickness = 0;
                 panel.FillColor = ColorTranslator.FromHtml("#800E13");
                 panel.Name = "data" + counter;
                 panel.Size = new Size(282, 135);
+                panel.AutoSize = true;
+                panel.AutoSizeMode = AutoSizeMode.GrowOnly;
 
                 // labels
                 Label lblId = new Label();
@@ -104,7 +105,7 @@ namespace CodeTrade.Pages
                 lblId.Font = new Font("Calibri", 10, FontStyle.Bold);
                 lblId.Name = "id" + counter;
                 lblId.Text = language == 1 ? "ID: " + delivery.id + " | Дата: " + delivery.DeliveryDate : "ID: " + delivery.id + " | Date: " + delivery.DeliveryDate;
-                lblId.Location = new Point(6, 9);
+                lblId.Location = new Point(6, 0);
                 panel.Controls.Add(lblId);
 
                 Label lblpickup = new Label();
@@ -112,7 +113,7 @@ namespace CodeTrade.Pages
                 lblpickup.Font = new Font("Calibri", 10, FontStyle.Bold);
                 lblpickup.Name = "lblpickup" + counter;
                 lblpickup.Text = language == 1 ? "Место получения: " + delivery.PickupPosName : "Pickup Place: " + delivery.PickupPosName;
-                lblpickup.Location = new Point(6, 24);
+                lblpickup.Location = new Point(6, 20);
                 panel.Controls.Add(lblpickup);
 
                 Label lbldrop = new Label();
@@ -120,7 +121,7 @@ namespace CodeTrade.Pages
                 lbldrop.Font = new Font("Calibri", 10, FontStyle.Bold);
                 lbldrop.Name = "lbldrop" + counter;
                 lbldrop.Text = language == 1 ? "Место доставки: " + delivery.DestinationPosName : "Destination Place: " + delivery.DestinationPosName;
-                lbldrop.Location = new Point(6, 39);
+                lbldrop.Location = new Point(6, 40);
                 panel.Controls.Add(lbldrop);
 
                 Label lblcargo = new Label();
@@ -128,7 +129,7 @@ namespace CodeTrade.Pages
                 lblcargo.Font = new Font("Calibri", 10, FontStyle.Bold);
                 lblcargo.Name = "lblcargo" + counter;
                 lblcargo.Text = language == 1 ? "Товар: " + delivery.GoodsName : "Goods: " + delivery.GoodsName;
-                lblcargo.Location = new Point(6, 54);
+                lblcargo.Location = new Point(6, 60);
                 panel.Controls.Add(lblcargo);
 
                 Label lblprice = new Label();
@@ -137,7 +138,7 @@ namespace CodeTrade.Pages
                 lblprice.ForeColor = Color.Red;
                 lblprice.Name = "lblprice" + counter;
                 lblprice.Text = language == 1 ? "Цена покупки: " + delivery.BuyPrice + " aUEC" : "Buy Price: " + delivery.BuyPrice + " aUEC";
-                lblprice.Location = new Point(6, 90);
+                lblprice.Location = new Point(6, 80);
                 panel.Controls.Add(lblprice);
 
                 Label lblsell = new Label();
@@ -146,8 +147,11 @@ namespace CodeTrade.Pages
                 lblsell.ForeColor = Color.Lime;
                 lblsell.Name = "lblsell" + counter;
                 lblsell.Text = language == 1 ? "Цена продажи: " + delivery.SellPrice + " aUEC" : "Sell Price: " + delivery.SellPrice + " aUEC";
-                lblsell.Location = new Point(6, 105);
+                lblsell.Location = new Point(6, 100);
+
                 panel.Controls.Add(lblsell);
+                
+                panel.Height += 20;
 
                 panels.Add(panel);
                 dataSet.Controls.Add(panel);

@@ -205,6 +205,11 @@ namespace CodeTrade
         {
             this.WindowState = FormWindowState.Minimized;
         }
+
+        private void pnlMain_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 
     public class Data
