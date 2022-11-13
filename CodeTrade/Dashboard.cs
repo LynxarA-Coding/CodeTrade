@@ -14,6 +14,9 @@ using Guna.UI2.WinForms.Helpers;
 using System.Windows.Markup;
 using CodeTrade.Properties;
 using System.Diagnostics.Contracts;
+using DiscordRPC;
+using System.Windows.Controls.Primitives;
+using System.Security.Policy;
 
 namespace CodeTrade
 {
@@ -25,13 +28,62 @@ namespace CodeTrade
         }
 
         private bool MenuState = true;
-        private List<Guna2TileButton> Buttons = new List<Guna2TileButton>();
+        private List<Guna2TileButton> TButtons = new List<Guna2TileButton>();
         private int PreviousBtn;
         
         public List<Data.Delivery> Deliveries = new List<Data.Delivery>();
         public List<string[]> Locations = new List<string[]>();
 
         public int language = 0;
+        private DiscordRpcClient client = null;
+        private Timestamps TimeFromStart = null;
+        private string InviteLink = "https://discord.gg/TutC2SzWKU";
+        private string RPCText = "";
+
+        private void DiscordUpdateRichPresence()
+        {
+            client.SetPresence(new RichPresence()
+            {
+                Details = RPCText,
+                State = language == 1 ? "Версия 1.1.1" : "Version 1.1.1",
+                Timestamps = TimeFromStart,
+                Assets = new Assets()
+                {
+                    LargeImageKey = "large",
+                    LargeImageText = "CodeTrade",
+                    SmallImageKey = "small",
+                    SmallImageText = "CODΞGaming Corporation | Star Citizen"
+                },
+                Buttons = new DiscordRPC.Button[]
+                {
+                    new DiscordRPC.Button() {Label = "CODΞGAMING DISCORD", Url = "https://discord.gg/TutC2SzWKU"}
+                }
+            });
+        }
+
+        private void DiscordRichPresence()
+        {
+            TimeFromStart = Timestamps.Now;
+            client = new DiscordRpcClient("1041128482492653718");
+            client.Initialize();
+            client.SetPresence(new RichPresence()
+            {
+                Details = RPCText,
+                State = language == 1 ? "Версия 1.1.1" : "Version 1.1.1",
+                Timestamps = TimeFromStart,
+                Assets = new Assets()
+                {
+                    LargeImageKey = "large",
+                    LargeImageText = "CodeTrade",
+                    SmallImageKey = "small",
+                    SmallImageText = "CODΞGaming Corporation | Star Citizen"
+                },
+                Buttons = new DiscordRPC.Button[]
+                {
+                    new DiscordRPC.Button() {Label = "CODΞGAMING DISCORD", Url = "https://discord.gg/TutC2SzWKU"}
+                }
+            });
+        }
 
         public void SaveDeliveries()
         {
@@ -52,7 +104,7 @@ namespace CodeTrade
             {
                 case 1:
                     pnlPage.Controls.Clear();
-                    Buttons[PreviousBtn].FillColor = Color.Transparent;
+                    TButtons[PreviousBtn].FillColor = Color.Transparent;
                     PreviousBtn = 1;
                     PageDeliveries page1 = new PageDeliveries() { Owner = this };
                     page1.TopLevel = false;
@@ -61,14 +113,18 @@ namespace CodeTrade
                     page1.Locations = Locations;
                     pnlPage.Controls.Add(page1);
                     page1.Show();
-                    Buttons[1].FillColor = ColorTranslator.FromHtml("#800E13");
+                    TButtons[1].FillColor = ColorTranslator.FromHtml("#800E13");
                     Main own1 = (Main)this.Owner;
                     own1.Text = language == 1 ? "CodeTrade | Доставки" : "CodeTrade | Deliveries";
                     own1.lblTitle.Text = language == 1 ? "CODΞTrade | Доставки" : "CODΞTrade | Deliveries";
+                    
+                    RPCText = language == 1 ? "В торговом путешествии" : "In trade journey";
+                    DiscordUpdateRichPresence();
+                    
                     break;
                 case 2:
                     pnlPage.Controls.Clear();
-                    Buttons[PreviousBtn].FillColor = Color.Transparent;
+                    TButtons[PreviousBtn].FillColor = Color.Transparent;
                     PreviousBtn = 2;
                     PageLogs page2 = new PageLogs() { Owner = this };
                     page2.TopLevel = false;
@@ -76,28 +132,36 @@ namespace CodeTrade
                     page2.language = language;
                     page2.Deliveries = Deliveries;
                     page2.Show();
-                    Buttons[2].FillColor = ColorTranslator.FromHtml("#800E13");
+                    TButtons[2].FillColor = ColorTranslator.FromHtml("#800E13");
                     Main own2 = (Main)this.Owner;
                     own2.Text = language == 1 ? "CodeTrade | Логи" : "CodeTrade | Logs";
                     own2.lblTitle.Text = language == 1 ? "CODΞTrade | Логи" : "CODΞTrade | Logs";
+                    
+                    RPCText = language == 1 ? "Просматривает логи" : "Viewing logs";
+                    DiscordUpdateRichPresence();
+                    
                     break;
                 case 3:
                     pnlPage.Controls.Clear();
-                    Buttons[PreviousBtn].FillColor = Color.Transparent;
+                    TButtons[PreviousBtn].FillColor = Color.Transparent;
                     PreviousBtn = 3;
                     PageSettings page3 = new PageSettings() { Owner = this };
                     page3.TopLevel = false;
                     pnlPage.Controls.Add(page3);
                     page3.language = language;
                     page3.Show();
-                    Buttons[3].FillColor = ColorTranslator.FromHtml("#800E13");
+                    TButtons[3].FillColor = ColorTranslator.FromHtml("#800E13");
                     Main own3 = (Main)this.Owner;
                     own3.Text = language == 1 ? "CodeTrade | Настройки" : "CodeTrade | Settings";
                     own3.lblTitle.Text = language == 1 ? "CODΞTrade | Настройки" : "CODΞTrade | Settings";
+                    
+                    RPCText = language == 1 ? "Настраивает программу" : "Configuring the program";
+                    DiscordUpdateRichPresence();
+                    
                     break;
                 default:
                     pnlPage.Controls.Clear();
-                    Buttons[PreviousBtn].FillColor = Color.Transparent;
+                    TButtons[PreviousBtn].FillColor = Color.Transparent;
                     PreviousBtn = 0;
                     PageDashboard page = new PageDashboard() { Owner = this };
                     page.TopLevel = false;
@@ -105,10 +169,17 @@ namespace CodeTrade
                     page.language = language;
                     page.Deliveries = Deliveries;
                     page.Show();
-                    Buttons[0].FillColor = ColorTranslator.FromHtml("#800E13");
+                    TButtons[0].FillColor = ColorTranslator.FromHtml("#800E13");
                     Main own = (Main)this.Owner;
                     own.Text = language == 1 ? "CodeTrade | Панель" : "CodeTrade | Dashboard";
                     own.lblTitle.Text = language == 1 ? "CODΞTrade | Панель" : "CODΞTrade | Dashboard";
+                    
+                    if (client != null)
+                    {
+                        RPCText = language == 1 ? "Просматривает Статистику" : "Viewing Statistics";
+                        DiscordUpdateRichPresence();
+                    }
+                    
                     break;
             }
         }
@@ -133,15 +204,18 @@ namespace CodeTrade
             }
             UpdateLanguage();
             
-            Buttons.Clear();
-            Buttons.Add(btnDashboard);
-            Buttons.Add(btnDeliveries);
-            Buttons.Add(btnLogs);
-            Buttons.Add(btnSettings);
+            TButtons.Clear();
+            TButtons.Add(btnDashboard);
+            TButtons.Add(btnDeliveries);
+            TButtons.Add(btnLogs);
+            TButtons.Add(btnSettings);
 
             btnMenuToggle.Top = (pnlMenu.Height - btnMenuToggle.Height) / 2;
 
             OpenPage(0);
+
+            RPCText = language == 1 ? "Просматривает Статистику" : "Viewing Statistics";
+            DiscordRichPresence();
         }
 
         private void btnToggleMenu_Click(object sender, EventArgs e)
@@ -156,7 +230,7 @@ namespace CodeTrade
                 pnlMenu.Width = 40;
                 menuTransition.ShowSync(pnlMenu);
 
-                foreach (Guna2TileButton btn in Buttons)
+                foreach (Guna2TileButton btn in TButtons)
                 {
                     btn.Visible = false;
                     btn.Enabled = false;
@@ -166,7 +240,7 @@ namespace CodeTrade
             }
             else
             {
-                foreach (Guna2TileButton btn in Buttons)
+                foreach (Guna2TileButton btn in TButtons)
                 {
                     btn.Visible = true;
                     btn.Enabled = true;

@@ -31,13 +31,13 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.pnlHeader = new System.Windows.Forms.Panel();
+            this.lblTag = new System.Windows.Forms.Label();
             this.lblTitle = new System.Windows.Forms.Label();
             this.btnHide = new System.Windows.Forms.PictureBox();
             this.btnExit = new System.Windows.Forms.PictureBox();
             this.pnlMain = new System.Windows.Forms.Panel();
             this.dragHeader = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.elipse = new Guna.UI2.WinForms.Guna2Elipse(this.components);
-            this.lblTag = new System.Windows.Forms.Label();
             this.pnlHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnHide)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnExit)).BeginInit();
@@ -55,6 +55,17 @@
             this.pnlHeader.Name = "pnlHeader";
             this.pnlHeader.Size = new System.Drawing.Size(950, 56);
             this.pnlHeader.TabIndex = 0;
+            // 
+            // lblTag
+            // 
+            this.lblTag.AutoSize = true;
+            this.lblTag.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTag.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
+            this.lblTag.Location = new System.Drawing.Point(17, 37);
+            this.lblTag.Name = "lblTag";
+            this.lblTag.Size = new System.Drawing.Size(153, 14);
+            this.lblTag.TabIndex = 2;
+            this.lblTag.Text = "Release v 1.1.1 | by lynxara";
             // 
             // lblTitle
             // 
@@ -108,17 +119,6 @@
             // 
             this.elipse.BorderRadius = 25;
             this.elipse.TargetControl = this;
-            // 
-            // lblTag
-            // 
-            this.lblTag.AutoSize = true;
-            this.lblTag.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTag.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
-            this.lblTag.Location = new System.Drawing.Point(17, 37);
-            this.lblTag.Name = "lblTag";
-            this.lblTag.Size = new System.Drawing.Size(153, 14);
-            this.lblTag.TabIndex = 2;
-            this.lblTag.Text = "Release v 1.1.0 | by lynxara";
             // 
             // Main
             // 
