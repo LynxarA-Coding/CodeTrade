@@ -1,6 +1,10 @@
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/6dad2c6ebb57491398b73bb03a331549)](https://www.codacy.com/gh/LynxarA-Coding/CodeTrade/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=LynxarA-Coding/CodeTrade&amp;utm_campaign=Badge_Grade)
 
 Blockquotes and *italic* info is a russian translation
+
+**If you will try to download code and edit it, it will not work
+This project requires Guna UI Framework license to edit/run**
+
 # Navigation in Readme | *Навигация по этому файлу*
 
 1. [INFO | ИНФОРМАЦИЯ](https://github.com/LynxarA-Coding/CodeTrade/edit/main/README.md#codetrade)
