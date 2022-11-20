@@ -1,22 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using CodeTrade.Pages;
 using System.Windows.Forms;
 using Guna.UI2.WinForms;
 using Newtonsoft.Json;
-using Guna.UI2.WinForms.Helpers;
-using System.Windows.Markup;
 using CodeTrade.Properties;
-using System.Diagnostics.Contracts;
 using DiscordRPC;
-using System.Windows.Controls.Primitives;
-using System.Security.Policy;
 
 namespace CodeTrade
 {
@@ -126,31 +116,12 @@ namespace CodeTrade
                     pnlPage.Controls.Clear();
                     TButtons[PreviousBtn].FillColor = Color.Transparent;
                     PreviousBtn = 2;
-                    PageLogs page2 = new PageLogs() { Owner = this };
-                    page2.TopLevel = false;
-                    pnlPage.Controls.Add(page2);
-                    page2.language = language;
-                    page2.Deliveries = Deliveries;
-                    page2.Show();
-                    TButtons[2].FillColor = ColorTranslator.FromHtml("#800E13");
-                    Main own2 = (Main)this.Owner;
-                    own2.Text = language == 1 ? "CodeTrade | Логи" : "CodeTrade | Logs";
-                    own2.lblTitle.Text = language == 1 ? "CODΞTrade | Логи" : "CODΞTrade | Logs";
-                    
-                    RPCText = language == 1 ? "Просматривает логи" : "Viewing logs";
-                    DiscordUpdateRichPresence();
-                    
-                    break;
-                case 3:
-                    pnlPage.Controls.Clear();
-                    TButtons[PreviousBtn].FillColor = Color.Transparent;
-                    PreviousBtn = 3;
                     PageSettings page3 = new PageSettings() { Owner = this };
                     page3.TopLevel = false;
                     pnlPage.Controls.Add(page3);
                     page3.language = language;
                     page3.Show();
-                    TButtons[3].FillColor = ColorTranslator.FromHtml("#800E13");
+                    TButtons[2].FillColor = ColorTranslator.FromHtml("#800E13");
                     Main own3 = (Main)this.Owner;
                     own3.Text = language == 1 ? "CodeTrade | Настройки" : "CodeTrade | Settings";
                     own3.lblTitle.Text = language == 1 ? "CODΞTrade | Настройки" : "CODΞTrade | Settings";
@@ -188,7 +159,6 @@ namespace CodeTrade
         {
             btnDashboard.Text = language == 1 ? "ПАНЕЛЬ" : "DASHBOARD";
             btnDeliveries.Text = language == 1 ? "ДОСТАВКИ" : "DELIVERIES";
-            btnLogs.Text = language == 1 ? "ЛОГИ" : "LOGS";
             btnSettings.Text = language == 1 ? "НАСТРОЙКИ" : "SETTINGS";
         }
 
@@ -207,7 +177,6 @@ namespace CodeTrade
             TButtons.Clear();
             TButtons.Add(btnDashboard);
             TButtons.Add(btnDeliveries);
-            TButtons.Add(btnLogs);
             TButtons.Add(btnSettings);
 
             btnMenuToggle.Top = (pnlMenu.Height - btnMenuToggle.Height) / 2;
@@ -223,38 +192,30 @@ namespace CodeTrade
             if (MenuState)
             {
                 lblCopyright.Visible = false;
-                btnMenuToggle.Image = Properties.Resources.right_arrow;
-                menuTransition.MaxAnimationTime = 1500;
-                menuTransition.HideSync(pnlMenu);
-                menuTransition.MaxAnimationTime = 0;
-                pnlMenu.Width = 40;
-                menuTransition.ShowSync(pnlMenu);
-
+                
                 foreach (Guna2TileButton btn in TButtons)
                 {
                     btn.Visible = false;
                     btn.Enabled = false;
                 }
+                
+                btnMenuToggle.Image = Properties.Resources.right_arrow;
+                pnlMenu.Width = 36;
 
                 MenuState = false;
             }
             else
             {
+                btnMenuToggle.Image = Properties.Resources.left_arrow;
+                pnlMenu.Width = 195;
+                
+                lblCopyright.Visible = true;
+                
                 foreach (Guna2TileButton btn in TButtons)
                 {
                     btn.Visible = true;
                     btn.Enabled = true;
                 }
-
-                lblCopyright.Visible = true;
-
-                btnMenuToggle.Image = Properties.Resources.left_arrow;
-                menuTransition.MaxAnimationTime = 0;
-                menuTransition.HideSync(pnlMenu);
-                pnlMenu.Width = 195;
-
-                menuTransition.MaxAnimationTime = 1500;
-                menuTransition.ShowSync(pnlMenu);
 
                 MenuState = true;
             }
@@ -276,19 +237,11 @@ namespace CodeTrade
             }
         }
 
-        private void btnLogs_Click(object sender, EventArgs e)
+        private void btnSettings_Click(object sender, EventArgs e)
         {
             if (PreviousBtn != 2)
             {
                 OpenPage(2);
-            }
-        }
-
-        private void btnSettings_Click(object sender, EventArgs e)
-        {
-            if (PreviousBtn != 3)
-            {
-                OpenPage(3);
             }
         }
     }

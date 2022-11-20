@@ -88,6 +88,9 @@
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="Octokit, Version=4.0.1.0, Culture=neutral, PublicKeyToken=0be8860aee462442, processorArchitecture=MSIL">
+      <HintPath>..\packages\Octokit.4.0.1\lib\netstandard2.0\Octokit.dll</HintPath>
+    </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
@@ -269,12 +272,6 @@
     <Compile Include="Pages\PageDeliveries.Designer.cs">
       <DependentUpon>PageDeliveries.cs</DependentUpon>
     </Compile>
-    <Compile Include="Pages\PageLogs.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Pages\PageLogs.Designer.cs">
-      <DependentUpon>PageLogs.cs</DependentUpon>
-    </Compile>
     <Compile Include="Pages\PageSettings.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -297,9 +294,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\PageDeliveries.resx">
       <DependentUpon>PageDeliveries.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Pages\PageLogs.resx">
-      <DependentUpon>PageLogs.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\PageSettings.resx">
       <DependentUpon>PageSettings.cs</DependentUpon>

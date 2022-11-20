@@ -1,6 +1,7 @@
 ﻿using Guna.UI2.WinForms;
 using LiveCharts;
 using LiveCharts.Wpf;
+using Octokit;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -33,10 +34,18 @@ namespace CodeTrade.Pages
         private List<string> dates = new List<string>();
 
         private List<Guna2Panel> panels = new List<Guna2Panel>();
-
-        private void FillGraph()
+        
+        private void FillGraph(List<Data.Delivery> tempDeliveries)
         {
-            foreach (Data.Delivery delivery in Deliveries)
+            Gains.Clear();
+            Expenses.Clear();
+            dates.Clear();
+            
+            chart1.Series.Clear();
+            chart1.AxisX.Clear();
+            chart1.AxisY.Clear();
+
+            foreach (Data.Delivery delivery in tempDeliveries)
             {
                 Gains.Add(delivery.SellPrice);
                 Expenses.Add(delivery.BuyPrice);
@@ -82,81 +91,107 @@ namespace CodeTrade.Pages
                 panels.Clear();
             }
 
-            int last = Deliveries.Count <= (cbRouteCount.SelectedIndex + 1) ? 0 : Deliveries.Count - (cbRouteCount.SelectedIndex + 1);
-            for (int i = Deliveries.Count - 1; i >= last; i--)
+            int delCount = 0;
+            int delLast = 0;
+            bool isContinue = true;
+
+            if (cbRouteCount.SelectedIndex > 1)
             {
-                Data.Delivery delivery = Deliveries[i];
-                totalTemp += delivery.SellPrice - delivery.BuyPrice;
-                
-                Guna2Panel panel = new Guna2Panel();
-                panel.BackColor = Color.Transparent;
-                panel.BorderColor = Color.Black;
-                panel.BorderRadius = 5;
-                panel.BorderThickness = 0;
-                panel.FillColor = ColorTranslator.FromHtml("#800E13");
-                panel.Name = "data" + counter;
-                panel.Size = new Size(282, 135);
-                panel.AutoSize = true;
-                panel.AutoSizeMode = AutoSizeMode.GrowOnly;
+                delCount = Deliveries.Count - 1;
+                delLast = Deliveries.Count <= (cbRouteCount.SelectedIndex - 1) ? 0 : Deliveries.Count - (cbRouteCount.SelectedIndex - 1);
+            }
+            else if (cbRouteCount.SelectedIndex == 1 && tbIdCheck())
+            {
+                delLast = Convert.ToInt32(tbIdChoice.Text);
+                delCount = delLast;
+            }
+            else if (cbRouteCount.SelectedIndex == 0)
+            {
+                delCount = Deliveries.Count - 1;
+                delLast = 0;
+            }
+            else
+            {
+                isContinue = false;
+            }
+            
+            if (isContinue)
+            {
+                for (int i = delCount; i >= delLast; i--)
+                {
+                    Data.Delivery delivery = Deliveries[i];
+                    totalTemp += delivery.SellPrice - delivery.BuyPrice;
 
-                // labels
-                Label lblId = new Label();
-                lblId.AutoSize = true;
-                lblId.Font = new Font("Calibri", 10, FontStyle.Bold);
-                lblId.Name = "id" + counter;
-                lblId.Text = language == 1 ? "ID: " + delivery.id + " | Дата: " + delivery.DeliveryDate : "ID: " + delivery.id + " | Date: " + delivery.DeliveryDate;
-                lblId.Location = new Point(6, 0);
-                panel.Controls.Add(lblId);
+                    Guna2Panel panel = new Guna2Panel();
+                    panel.BackColor = Color.Transparent;
+                    panel.BorderColor = Color.Black;
+                    panel.BorderRadius = 5;
+                    panel.BorderThickness = 0;
+                    panel.FillColor = ColorTranslator.FromHtml("#800E13");
+                    panel.Name = "data" + counter;
+                    panel.Size = new Size(282, 135);
+                    panel.AutoSize = true;
+                    panel.AutoSizeMode = AutoSizeMode.GrowOnly;
 
-                Label lblpickup = new Label();
-                lblpickup.AutoSize = true;
-                lblpickup.Font = new Font("Calibri", 10, FontStyle.Bold);
-                lblpickup.Name = "lblpickup" + counter;
-                lblpickup.Text = language == 1 ? "Место получения: " + delivery.PickupPosName : "Pickup Place: " + delivery.PickupPosName;
-                lblpickup.Location = new Point(6, 20);
-                panel.Controls.Add(lblpickup);
+                    // labels
+                    System.Windows.Forms.Label lblId = new System.Windows.Forms.Label();
+                    lblId.AutoSize = true;
+                    lblId.Font = new Font("Calibri", 10, FontStyle.Bold);
+                    lblId.Name = "id" + counter;
+                    lblId.Text = language == 1 ? "ID: " + delivery.id + " | Дата: " + delivery.DeliveryDate : "ID: " + delivery.id + " | Date: " + delivery.DeliveryDate;
+                    lblId.Location = new Point(6, 0);
+                    panel.Controls.Add(lblId);
 
-                Label lbldrop = new Label();
-                lbldrop.AutoSize = true;
-                lbldrop.Font = new Font("Calibri", 10, FontStyle.Bold);
-                lbldrop.Name = "lbldrop" + counter;
-                lbldrop.Text = language == 1 ? "Место доставки: " + delivery.DestinationPosName : "Destination Place: " + delivery.DestinationPosName;
-                lbldrop.Location = new Point(6, 40);
-                panel.Controls.Add(lbldrop);
+                    System.Windows.Forms.Label lblpickup = new System.Windows.Forms.Label();
+                    lblpickup.AutoSize = true;
+                    lblpickup.Font = new Font("Calibri", 10, FontStyle.Bold);
+                    lblpickup.Name = "lblpickup" + counter;
+                    lblpickup.Text = language == 1 ? "Место получения: " + delivery.PickupPosName : "Pickup Place: " + delivery.PickupPosName;
+                    lblpickup.Location = new Point(6, 20);
+                    panel.Controls.Add(lblpickup);
 
-                Label lblcargo = new Label();
-                lblcargo.AutoSize = true;
-                lblcargo.Font = new Font("Calibri", 10, FontStyle.Bold);
-                lblcargo.Name = "lblcargo" + counter;
-                lblcargo.Text = language == 1 ? "Товар: " + delivery.GoodsName : "Goods: " + delivery.GoodsName;
-                lblcargo.Location = new Point(6, 60);
-                panel.Controls.Add(lblcargo);
+                    System.Windows.Forms.Label lbldrop = new System.Windows.Forms.Label();
+                    lbldrop.AutoSize = true;
+                    lbldrop.Font = new Font("Calibri", 10, FontStyle.Bold);
+                    lbldrop.Name = "lbldrop" + counter;
+                    lbldrop.Text = language == 1 ? "Место доставки: " + delivery.DestinationPosName : "Destination Place: " + delivery.DestinationPosName;
+                    lbldrop.Location = new Point(6, 40);
+                    panel.Controls.Add(lbldrop);
 
-                Label lblprice = new Label();
-                lblprice.AutoSize = true;
-                lblprice.Font = new Font("Calibri", 10, FontStyle.Bold);
-                lblprice.ForeColor = Color.Red;
-                lblprice.Name = "lblprice" + counter;
-                lblprice.Text = language == 1 ? "Цена покупки: " + delivery.BuyPrice + " aUEC" : "Buy Price: " + delivery.BuyPrice + " aUEC";
-                lblprice.Location = new Point(6, 80);
-                panel.Controls.Add(lblprice);
+                    System.Windows.Forms.Label lblcargo = new System.Windows.Forms.Label();
+                    lblcargo.AutoSize = true;
+                    lblcargo.Font = new Font("Calibri", 10, FontStyle.Bold);
+                    lblcargo.Name = "lblcargo" + counter;
+                    lblcargo.Text = language == 1 ? "Товар: " + delivery.GoodsName : "Goods: " + delivery.GoodsName;
+                    lblcargo.Location = new Point(6, 60);
+                    panel.Controls.Add(lblcargo);
 
-                Label lblsell = new Label();
-                lblsell.AutoSize = true;
-                lblsell.Font = new Font("Calibri", 10, FontStyle.Bold);
-                lblsell.ForeColor = Color.Lime;
-                lblsell.Name = "lblsell" + counter;
-                lblsell.Text = language == 1 ? "Цена продажи: " + delivery.SellPrice + " aUEC" : "Sell Price: " + delivery.SellPrice + " aUEC";
-                lblsell.Location = new Point(6, 100);
+                    System.Windows.Forms.Label lblprice = new System.Windows.Forms.Label();
+                    lblprice.AutoSize = true;
+                    lblprice.Font = new Font("Calibri", 10, FontStyle.Bold);
+                    lblprice.ForeColor = Color.Red;
+                    lblprice.Name = "lblprice" + counter;
+                    lblprice.Text = language == 1 ? "Цена покупки: " + delivery.BuyPrice + " aUEC" : "Buy Price: " + delivery.BuyPrice + " aUEC";
+                    lblprice.Location = new Point(6, 80);
+                    panel.Controls.Add(lblprice);
 
-                panel.Controls.Add(lblsell);
-                
-                panel.Height += 20;
+                    System.Windows.Forms.Label lblsell = new System.Windows.Forms.Label();
+                    lblsell.AutoSize = true;
+                    lblsell.Font = new Font("Calibri", 10, FontStyle.Bold);
+                    lblsell.ForeColor = Color.Lime;
+                    lblsell.Name = "lblsell" + counter;
+                    lblsell.Text = language == 1 ? "Цена продажи: " + delivery.SellPrice + " aUEC" : "Sell Price: " + delivery.SellPrice + " aUEC";
+                    lblsell.Location = new Point(6, 100);
 
-                panels.Add(panel);
-                dataSet.Controls.Add(panel);
+                    panel.Controls.Add(lblsell);
 
-                counter++;
+                    panel.Height += 20;
+
+                    panels.Add(panel);
+                    dataSet.Controls.Add(panel);
+
+                    counter++;
+                }
             }
         }
 
@@ -165,10 +200,13 @@ namespace CodeTrade.Pages
             lblData.Text = language == 1 ? "Последние 5 Маршрутов (всего: 5):" : "Last 5 Routes (total: 5):";
             lblTotalTemp.Text = language == 1 ? "Промежуточная прибыль: 0 aUEC" : "Intermediate profit: 0 aUEC";
             lblTotal.Text = language == 1 ? "Конечная прибыль: 0 aUEC" : "Final profit: 0 aUEC";
-            
+            lblChartLoading.Text = language == 1 ? "Загрузка графика..." : "Loading chart...";
+
             if (language == 1)
             {
                 cbRouteCount.Items.Clear();
+                cbRouteCount.Items.Add("Показать ВСЕ");
+                cbRouteCount.Items.Add("Показать по ID");
                 cbRouteCount.Items.Add("Показать: 1");
                 cbRouteCount.Items.Add("Показать: 2");
                 cbRouteCount.Items.Add("Показать: 3");
@@ -178,6 +216,8 @@ namespace CodeTrade.Pages
             else
             {
                 cbRouteCount.Items.Clear();
+                cbRouteCount.Items.Add("Show ALL");
+                cbRouteCount.Items.Add("Show by ID");
                 cbRouteCount.Items.Add("Show: 1");
                 cbRouteCount.Items.Add("Show: 2");
                 cbRouteCount.Items.Add("Show: 3");
@@ -188,12 +228,29 @@ namespace CodeTrade.Pages
 
         private void CalculateTotal()
         {
-            int amount = cbRouteCount.SelectedIndex + 1;
+            int delLast = 0;
+            int delFirst = 0;
+
+            if (cbRouteCount.SelectedIndex > 1)
+            {
+                delLast = cbRouteCount.SelectedIndex;
+                delFirst = Deliveries.Count - 1;
+            }
+            else if (cbRouteCount.SelectedIndex == 1)
+            {
+                delFirst = Convert.ToInt32(tbIdChoice.Text);
+                delLast = delFirst;
+            }
+            else
+            {
+                delFirst = Deliveries.Count - 1;
+                delLast = 0;
+            }
 
             if (Deliveries.Count > 0)
             {
                 totalTemp = 0;
-                for (int i = Deliveries.Count - 1; i >= Deliveries.Count - amount; i--)
+                for (int i = delFirst; i >= delLast; i--)
                 {
                     totalTemp += Deliveries[i].SellPrice - Deliveries[i].BuyPrice;
                 }
@@ -209,7 +266,7 @@ namespace CodeTrade.Pages
                 }
 
                 lblTotalTemp.Text = language == 1 ? "Промежуточная прибыль: " + totalTemp + " aUEC" : "Intermediate profit: " + totalTemp + " aUEC";
-
+                
                 total = 0;
                 foreach (int bought in Expenses)
                 {
@@ -236,9 +293,9 @@ namespace CodeTrade.Pages
         private void PageDashboard_Load(object sender, EventArgs e)
         {
             ChangeLanguageVisuals();
-            FillGraph();
+            FillGraph(Deliveries);
             FillDataSet();
-            cbRouteCount.SelectedIndex = 0;
+            cbRouteCount.SelectedIndex = 2;
             CalculateTotal();
         }
 
@@ -246,45 +303,129 @@ namespace CodeTrade.Pages
         {
             if (Deliveries.Count != 0)
             {
-                int amount = Deliveries.Count;
-
-                while (amount < cbRouteCount.SelectedIndex + 1)
+                if (cbRouteCount.SelectedIndex > 1 || cbRouteCount.SelectedIndex == 0)
                 {
-                    cbRouteCount.SelectedIndex--;
-                }
+                    tbIdChoice.Enabled = false;
+                    tbIdChoice.Visible = false;
+                    
+                    int amount = Deliveries.Count;
 
-                if (language == 1)
-                {
-                    switch (cbRouteCount.SelectedIndex)
+                    while (amount < cbRouteCount.SelectedIndex)
                     {
-                        case 0:
-                            lblData.Text = $"Последний маршрут (всего: {Deliveries.Count}):";
-                            break;
-                        case 1:
-                            lblData.Text = $"Последние 2 маршрута (всего: {Deliveries.Count}):";
-                            break;
-                        case 2:
-                            lblData.Text = $"Последние 3 маршрута (всего: {Deliveries.Count}):";
-                            break;
-                        case 3:
-                            lblData.Text = $"Последние 4 маршрута (всего: {Deliveries.Count}):";
-                            break;
-                        case 4:
-                            lblData.Text = $"Последние 5 маршрутов (всего: {Deliveries.Count}):";
-                            break;
+                        cbRouteCount.SelectedIndex--;
                     }
-                }
-                else
-                {
-                    lblData.Text = $"Last {cbRouteCount.SelectedIndex + 1} Routes (total: {Deliveries.Count}):";
-                }
 
-                FillDataSet();
-                CalculateTotal();
+                    if (language == 1)
+                    {
+                        switch (cbRouteCount.SelectedIndex)
+                        {
+                            case 0:
+                                lblData.Text = "Все маршруты:";
+                                break;
+                            case 1:
+                                lblData.Text = "Маршрут:";
+                                break;
+                            case 2:
+                                lblData.Text = $"Последний маршрут (всего: {Deliveries.Count}):";
+                                break;
+                            case 3:
+                                lblData.Text = $"Последние 2 маршрута (всего: {Deliveries.Count}):";
+                                break;
+                            case 4:
+                                lblData.Text = $"Последние 3 маршрута (всего: {Deliveries.Count}):";
+                                break;
+                            case 5:
+                                lblData.Text = $"Последние 4 маршрута (всего: {Deliveries.Count}):";
+                                break;
+                            case 6:
+                                lblData.Text = $"Последние 5 маршрутов (всего: {Deliveries.Count}):";
+                                break;
+                        }
+                    }
+                    else
+                    {
+                        if (cbRouteCount.SelectedIndex == 0)
+                        {
+                            lblData.Text = "All routes:";
+                        }
+                        else
+                        {
+                            lblData.Text = $"Last {cbRouteCount.SelectedIndex - 1} Routes (total: {Deliveries.Count}):";
+                        }
+                    }
+
+                    int lastIndex = 0;
+                    if (cbRouteCount.SelectedIndex != 0)
+                    {
+                        lastIndex = Deliveries.Count - cbRouteCount.SelectedIndex;
+                    }
+
+                    List<Data.Delivery> deliveries = new List<Data.Delivery>();
+                    for (int i = Deliveries.Count - 1; i >= lastIndex; i--)
+                    {
+                        deliveries.Add(Deliveries[i]);
+                    }
+
+                    FillGraph(deliveries);
+                    FillDataSet();
+                    CalculateTotal();
+                }
+                else if (cbRouteCount.SelectedIndex == 1)
+                {
+                    tbIdChoice.Enabled = true;
+                    tbIdChoice.Visible = true;
+
+                    lblData.Text = language == 1 ? "Маршрут:" : "Route:";
+                }
             }
             else
             {
-                lblData.Text = language == 1 ? "Маршруты::" : "Routes:";
+                lblData.Text = language == 1 ? "Маршруты (0):" : "Routes (0):";
+            }
+        }
+
+        private bool tbIdCheck()
+        {
+            if (tbIdChoice.Text != "")
+            {
+                if (Convert.ToInt32(tbIdChoice.Text) >= 0 && Convert.ToInt32(tbIdChoice.Text) <= Deliveries.Count)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        private void tbIdChoice_TextChanged(object sender, EventArgs e)
+        {
+            if (tbIdChoice.Text != "")
+            {
+                int id = Convert.ToInt32(tbIdChoice.Text);
+                if (id > Deliveries.Count)
+                {
+                    tbIdChoice.Text = (Deliveries.Count - 1).ToString();
+                    id = Deliveries.Count - 1;
+                }
+                else if (id < 0)
+                {
+                    tbIdChoice.Text = "0";
+                    id = 0;
+                }
+                tbIdChoice.SelectionStart = tbIdChoice.Text.Length;
+
+                List<Data.Delivery> deliveries = new List<Data.Delivery>();
+                deliveries.Add(Deliveries[id]);
+
+                FillGraph(deliveries);
+                FillDataSet();
+                CalculateTotal();
             }
         }
     }

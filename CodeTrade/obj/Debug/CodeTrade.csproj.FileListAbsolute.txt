@@ -13,7 +13,6 @@ C:\Users\ASUS\Documents\repo\projects\CodeTrade\CodeTrade\obj\Debug\CodeTrade.ex
 C:\Users\ASUS\Documents\repo\projects\CodeTrade\CodeTrade\obj\Debug\CodeTrade.pdb
 C:\Users\ASUS\Documents\repo\projects\CodeTrade\CodeTrade\obj\Debug\CodeTrade.Dashboard.resources
 C:\Users\ASUS\Documents\repo\projects\CodeTrade\CodeTrade\obj\Debug\CodeTrade.Pages.PageDashboard.resources
-C:\Users\ASUS\Documents\repo\projects\CodeTrade\CodeTrade\obj\Debug\CodeTrade.Pages.PageLogs.resources
 C:\Users\ASUS\Documents\repo\projects\CodeTrade\CodeTrade\obj\Debug\CodeTrade.Pages.PageSettings.resources
 C:\Users\ASUS\Documents\repo\projects\CodeTrade\CodeTrade\bin\Debug\Newtonsoft.Json.xml
 C:\Users\ASUS\Documents\repo\projects\CodeTrade\CodeTrade\obj\Debug\CodeTrade.Pages.PageDeliveries.resources
@@ -23,3 +22,4 @@ C:\Users\ASUS\Documents\repo\projects\CodeTrade\CodeTrade\bin\Debug\LiveCharts.W
 C:\Users\ASUS\Documents\repo\projects\CodeTrade\CodeTrade\bin\Debug\System.Diagnostics.DiagnosticSource.xml
 C:\Users\ASUS\Documents\repo\projects\CodeTrade\CodeTrade\obj\Debug\CodeTrade.csproj.Fody.CopyLocal.cache
 C:\Users\ASUS\Documents\repo\projects\CodeTrade\CodeTrade\bin\Debug\DiscordRPC.xml
+C:\Users\ASUS\Documents\repo\projects\CodeTrade\CodeTrade\bin\Debug\Octokit.xml

@@ -56,7 +56,7 @@ namespace CodeTrade.Pages
             lblBuyTotal.Text = language == 1 ? "Сумма закупки: 0 aUEC" : "Buy total: 0 aUEC";
             lblSellTotal.Text = language == 1 ? "Сумма продажи: 0 aUEC" : "Sell total: 0 aUEC";
             lblFullTotal.Text = language == 1 ? "Итого за поездку: 0 aUEC" : "Trip total: 0 aUEC";
-            lblBuyPlace.Text = language == 1 ? "Место: покупки товара" : "Pickup location:";
+            lblBuyPlace.Text = language == 1 ? "Место покупки товара" : "Pickup location:";
             lblSellPlace.Text = language == 1 ? "Место продажи товара" : "Dropoff location:";
             btnFinish.Text = language == 1 ? "ЗАВЕРШИТЬ ПОЕЗДКУ" : "FINISH TRIP";
             lblCargoTitle.Text = language == 1 ? "Товары на корабле:" : "Cargo on ship:";

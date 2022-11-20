@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CodeTrade.Properties;
+using Octokit;
 
 namespace CodeTrade
 {
@@ -22,6 +23,31 @@ namespace CodeTrade
 
         private int tick;
         private int language = 0;
+        private int AppVersion = 1001002;
+        private bool isAppUpToDate = true;
+
+        private async void CheckVersion()
+        {
+            GitHubClient client = new GitHubClient(new ProductHeaderValue("CodeTrade"));
+            IReadOnlyList<Release> releases = await client.Repository.Release.GetAll("LynxarA-Coding", "CodeTrade");
+            string latestVersion = releases[0].TagName;
+            
+            string latestVersionNumber = latestVersion.Substring(latestVersion.IndexOf("-") + 1);
+            int latestVersionNumberInt = 0;
+            
+            latestVersionNumberInt += Convert.ToInt32(latestVersionNumber.Substring(0, latestVersionNumber.IndexOf("."))) * 1000000;
+            latestVersionNumber = latestVersionNumber.Substring(latestVersionNumber.IndexOf(".") + 1);
+
+            latestVersionNumberInt += Convert.ToInt32(latestVersionNumber.Substring(0, latestVersionNumber.IndexOf("."))) * 1000;
+            latestVersionNumber = latestVersionNumber.Substring(latestVersionNumber.IndexOf(".") + 1);
+
+            latestVersionNumberInt += Convert.ToInt32(latestVersionNumber);
+            
+            if (AppVersion < latestVersionNumberInt)
+            {
+                isAppUpToDate = false;
+            }
+        }
 
         private void CheckJson()
         {
@@ -63,7 +89,13 @@ namespace CodeTrade
 
         private void loadTimer_Tick(object sender, EventArgs e)
         {
-            if (tick == 50)
+            if (tick == 30)
+            {
+                CheckVersion();
+                tick++;
+                pBar.Value++;
+            }
+            else if (tick == 65)
             {
                 CheckJson();
                 tick++;
@@ -77,9 +109,22 @@ namespace CodeTrade
             else if (tick >= 100)
             {
                 loadTimer.Stop();
-                ((Main)this.Owner).LoadComplete();
-                
-                this.Close();
+
+                if (isAppUpToDate)
+                {
+                    ((Main)this.Owner).LoadComplete();
+
+                    this.Close();
+                }
+                else
+                {
+                    pBar.Visible = false;
+                    lblLoading.Visible = false;
+                    lblVersionOutdated.Text = language == 1 ? "Ваша версия программы устарела. Пожалуйста, обновите программу!" : "Your app version is outdated. Please update the program!";
+                    lblVersionOutdated.Left = (this.Width - lblVersionOutdated.Width) / 2;
+                    lblVersionOutdated.Top = (this.Height - lblVersionOutdated.Height) / 2 - 20;
+                    loadTimer.Stop();
+                }
             }
         }
     }

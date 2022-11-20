@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.AnimatorNS.Animation animation2 = new Guna.UI2.AnimatorNS.Animation();
+            Guna.UI2.AnimatorNS.Animation animation1 = new Guna.UI2.AnimatorNS.Animation();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
             this.pnlMenu = new Guna.UI2.WinForms.Guna2Panel();
+            this.pnlDivider = new System.Windows.Forms.Panel();
             this.lblCopyright = new System.Windows.Forms.Label();
             this.btnSettings = new Guna.UI2.WinForms.Guna2TileButton();
-            this.btnLogs = new Guna.UI2.WinForms.Guna2TileButton();
             this.btnDeliveries = new Guna.UI2.WinForms.Guna2TileButton();
             this.btnDashboard = new Guna.UI2.WinForms.Guna2TileButton();
             this.btnToggleMenu = new Guna.UI2.WinForms.Guna2Panel();
@@ -50,9 +50,10 @@
             this.pnlMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
             this.pnlMenu.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(14)))), ((int)(((byte)(19)))));
             this.pnlMenu.BorderRadius = 15;
+            this.pnlMenu.BorderThickness = 3;
+            this.pnlMenu.Controls.Add(this.pnlDivider);
             this.pnlMenu.Controls.Add(this.lblCopyright);
             this.pnlMenu.Controls.Add(this.btnSettings);
-            this.pnlMenu.Controls.Add(this.btnLogs);
             this.pnlMenu.Controls.Add(this.btnDeliveries);
             this.pnlMenu.Controls.Add(this.btnDashboard);
             this.pnlMenu.Controls.Add(this.btnToggleMenu);
@@ -63,6 +64,15 @@
             this.pnlMenu.ShadowDecoration.Parent = this.pnlMenu;
             this.pnlMenu.Size = new System.Drawing.Size(195, 544);
             this.pnlMenu.TabIndex = 0;
+            // 
+            // pnlDivider
+            // 
+            this.pnlDivider.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(14)))), ((int)(((byte)(19)))));
+            this.menuTransition.SetDecoration(this.pnlDivider, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.pnlDivider.Location = new System.Drawing.Point(156, 0);
+            this.pnlDivider.Name = "pnlDivider";
+            this.pnlDivider.Size = new System.Drawing.Size(2, 544);
+            this.pnlDivider.TabIndex = 2;
             // 
             // lblCopyright
             // 
@@ -88,34 +98,13 @@
             this.btnSettings.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSettings.ForeColor = System.Drawing.Color.Black;
             this.btnSettings.HoverState.Parent = this.btnSettings;
-            this.btnSettings.Location = new System.Drawing.Point(3, 159);
+            this.btnSettings.Location = new System.Drawing.Point(4, 108);
             this.btnSettings.Name = "btnSettings";
             this.btnSettings.ShadowDecoration.Parent = this.btnSettings;
             this.btnSettings.Size = new System.Drawing.Size(152, 46);
             this.btnSettings.TabIndex = 1;
             this.btnSettings.Text = "НАСТРОЙКИ";
             this.btnSettings.Click += new System.EventHandler(this.btnSettings_Click);
-            // 
-            // btnLogs
-            // 
-            this.btnLogs.BackColor = System.Drawing.Color.Transparent;
-            this.btnLogs.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(14)))), ((int)(((byte)(19)))));
-            this.btnLogs.BorderRadius = 5;
-            this.btnLogs.BorderThickness = 2;
-            this.btnLogs.CheckedState.Parent = this.btnLogs;
-            this.btnLogs.CustomImages.Parent = this.btnLogs;
-            this.menuTransition.SetDecoration(this.btnLogs, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.btnLogs.FillColor = System.Drawing.Color.Transparent;
-            this.btnLogs.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogs.ForeColor = System.Drawing.Color.Black;
-            this.btnLogs.HoverState.Parent = this.btnLogs;
-            this.btnLogs.Location = new System.Drawing.Point(3, 107);
-            this.btnLogs.Name = "btnLogs";
-            this.btnLogs.ShadowDecoration.Parent = this.btnLogs;
-            this.btnLogs.Size = new System.Drawing.Size(152, 46);
-            this.btnLogs.TabIndex = 1;
-            this.btnLogs.Text = "ЛОГИ";
-            this.btnLogs.Click += new System.EventHandler(this.btnLogs_Click);
             // 
             // btnDeliveries
             // 
@@ -130,7 +119,7 @@
             this.btnDeliveries.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDeliveries.ForeColor = System.Drawing.Color.Black;
             this.btnDeliveries.HoverState.Parent = this.btnDeliveries;
-            this.btnDeliveries.Location = new System.Drawing.Point(3, 55);
+            this.btnDeliveries.Location = new System.Drawing.Point(4, 56);
             this.btnDeliveries.Name = "btnDeliveries";
             this.btnDeliveries.ShadowDecoration.Parent = this.btnDeliveries;
             this.btnDeliveries.Size = new System.Drawing.Size(152, 46);
@@ -151,7 +140,7 @@
             this.btnDashboard.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDashboard.ForeColor = System.Drawing.Color.Black;
             this.btnDashboard.HoverState.Parent = this.btnDashboard;
-            this.btnDashboard.Location = new System.Drawing.Point(3, 3);
+            this.btnDashboard.Location = new System.Drawing.Point(4, 4);
             this.btnDashboard.Name = "btnDashboard";
             this.btnDashboard.ShadowDecoration.Parent = this.btnDashboard;
             this.btnDashboard.Size = new System.Drawing.Size(152, 46);
@@ -163,15 +152,13 @@
             // 
             this.btnToggleMenu.BackColor = System.Drawing.Color.Transparent;
             this.btnToggleMenu.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(14)))), ((int)(((byte)(19)))));
-            this.btnToggleMenu.BorderRadius = 15;
-            this.btnToggleMenu.BorderThickness = 3;
             this.btnToggleMenu.Controls.Add(this.btnMenuToggle);
             this.menuTransition.SetDecoration(this.btnToggleMenu, Guna.UI2.AnimatorNS.DecorationType.None);
             this.btnToggleMenu.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnToggleMenu.Location = new System.Drawing.Point(155, 0);
+            this.btnToggleMenu.Location = new System.Drawing.Point(159, 0);
             this.btnToggleMenu.Name = "btnToggleMenu";
             this.btnToggleMenu.ShadowDecoration.Parent = this.btnToggleMenu;
-            this.btnToggleMenu.Size = new System.Drawing.Size(40, 544);
+            this.btnToggleMenu.Size = new System.Drawing.Size(36, 544);
             this.btnToggleMenu.TabIndex = 0;
             this.btnToggleMenu.Click += new System.EventHandler(this.btnToggleMenu_Click);
             // 
@@ -179,7 +166,7 @@
             // 
             this.menuTransition.SetDecoration(this.btnMenuToggle, Guna.UI2.AnimatorNS.DecorationType.None);
             this.btnMenuToggle.Image = global::CodeTrade.Properties.Resources.left_arrow;
-            this.btnMenuToggle.Location = new System.Drawing.Point(5, 231);
+            this.btnMenuToggle.Location = new System.Drawing.Point(2, 231);
             this.btnMenuToggle.Name = "btnMenuToggle";
             this.btnMenuToggle.Size = new System.Drawing.Size(30, 30);
             this.btnMenuToggle.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -191,22 +178,22 @@
             // 
             this.menuTransition.AnimationType = Guna.UI2.AnimatorNS.AnimationType.HorizSlide;
             this.menuTransition.Cursor = null;
-            animation2.AnimateOnlyDifferences = true;
-            animation2.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.BlindCoeff")));
-            animation2.LeafCoeff = 0F;
-            animation2.MaxTime = 1F;
-            animation2.MinTime = 0F;
-            animation2.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicCoeff")));
-            animation2.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicShift")));
-            animation2.MosaicSize = 0;
-            animation2.Padding = new System.Windows.Forms.Padding(0);
-            animation2.RotateCoeff = 0F;
-            animation2.RotateLimit = 0F;
-            animation2.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.ScaleCoeff")));
-            animation2.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.SlideCoeff")));
-            animation2.TimeCoeff = 0F;
-            animation2.TransparencyCoeff = 0F;
-            this.menuTransition.DefaultAnimation = animation2;
+            animation1.AnimateOnlyDifferences = true;
+            animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
+            animation1.LeafCoeff = 0F;
+            animation1.MaxTime = 1F;
+            animation1.MinTime = 0F;
+            animation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicCoeff")));
+            animation1.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicShift")));
+            animation1.MosaicSize = 0;
+            animation1.Padding = new System.Windows.Forms.Padding(0);
+            animation1.RotateCoeff = 0F;
+            animation1.RotateLimit = 0F;
+            animation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.ScaleCoeff")));
+            animation1.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.SlideCoeff")));
+            animation1.TimeCoeff = 0F;
+            animation1.TransparencyCoeff = 0F;
+            this.menuTransition.DefaultAnimation = animation1;
             // 
             // pnlPage
             // 
@@ -246,10 +233,10 @@
         private Guna.UI2.WinForms.Guna2Transition menuTransition;
         private System.Windows.Forms.PictureBox btnMenuToggle;
         private Guna.UI2.WinForms.Guna2TileButton btnDashboard;
-        private Guna.UI2.WinForms.Guna2TileButton btnLogs;
         private Guna.UI2.WinForms.Guna2TileButton btnSettings;
         private Guna.UI2.WinForms.Guna2Panel pnlPage;
         private Guna.UI2.WinForms.Guna2TileButton btnDeliveries;
         private System.Windows.Forms.Label lblCopyright;
+        private System.Windows.Forms.Panel pnlDivider;
     }
 }
