@@ -22,8 +22,8 @@ namespace CodeTrade
         }
 
         private int tick;
-        private int language = 0;
-        private int AppVersion = 1001002;
+        private int language;
+        private readonly int AppVersion = 1001002;
         private bool isAppUpToDate = true;
 
         private async void CheckVersion()

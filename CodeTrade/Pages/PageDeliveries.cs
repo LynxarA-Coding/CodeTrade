@@ -20,7 +20,7 @@ namespace CodeTrade.Pages
             InitializeComponent();
         }
 
-        public int language = 0;
+        public int language;
 
         public List<Data.Delivery> Deliveries = new List<Data.Delivery>();
         public List<string[]> Locations = new List<string[]>();
@@ -28,8 +28,8 @@ namespace CodeTrade.Pages
         private List<Cargo> ShipCargo = new List<Cargo>();
         private List<Guna2Panel> CargoSquares = new List<Guna2Panel>();
 
-        private int TotalBuyPrice = 0;
-        private int TotalSellPrice = 0;
+        private int TotalBuyPrice;
+        private int TotalSellPrice;
 
         private void PageDeliveries_Load(object sender, EventArgs e)
         {

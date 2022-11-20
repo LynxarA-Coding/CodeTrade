@@ -22,7 +22,7 @@ namespace CodeTrade.Pages
         {
             InitializeComponent();
         }
-        public int language = 0;
+        public int language;
 
         public List<Data.Delivery> Deliveries = new List<Data.Delivery>();
         private List<int> Gains = new List<int>();
@@ -405,6 +405,14 @@ namespace CodeTrade.Pages
 
         private void tbIdChoice_TextChanged(object sender, EventArgs e)
         {
+            foreach (char c in tbIdChoice.Text)
+            {
+                if (!char.IsDigit(c))
+                {
+                    tbIdChoice.Text = "";
+                }
+            }
+            
             if (tbIdChoice.Text != "")
             {
                 int id = Convert.ToInt32(tbIdChoice.Text);

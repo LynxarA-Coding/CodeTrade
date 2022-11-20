@@ -18,7 +18,7 @@ namespace CodeTrade.Pages
             InitializeComponent();
         }
 
-        public int language = 0;
+        public int language;
 
         private void btnDeleteData_Click(object sender, EventArgs e)
         {

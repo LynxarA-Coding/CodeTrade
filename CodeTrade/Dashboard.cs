@@ -24,10 +24,10 @@ namespace CodeTrade
         public List<Data.Delivery> Deliveries = new List<Data.Delivery>();
         public List<string[]> Locations = new List<string[]>();
 
-        public int language = 0;
-        private DiscordRpcClient client = null;
-        private Timestamps TimeFromStart = null;
-        private string InviteLink = "https://discord.gg/TutC2SzWKU";
+        public int language;
+        private DiscordRpcClient client;
+        private Timestamps TimeFromStart;
+        private readonly string InviteLink = "https://discord.gg/TutC2SzWKU";
         private string RPCText = "";
 
         private void DiscordUpdateRichPresence()
