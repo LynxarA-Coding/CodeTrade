@@ -150,3 +150,6 @@ We have a #specs forum that includes a post about this app. You can send your qu
 
 If you found a bug, you can submit it [here](https://github.com/LynxarA-Coding/CodeTrade/issues)
 >*Если вы нашли баг, то отправить его можно [сюда](https://github.com/LynxarA-Coding/CodeTrade/issues)*
+
+![codegaming logo](https://i.imgur.com/Rb4aZHL.png)
+**CODEGAMING Corporation Discord: https://discord.gg/codegaming**
