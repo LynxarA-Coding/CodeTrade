@@ -310,7 +310,7 @@ namespace CodeTrade.Pages
                     
                     int amount = Deliveries.Count;
 
-                    while (amount < cbRouteCount.SelectedIndex)
+                    while (amount < cbRouteCount.SelectedIndex - 1)
                     {
                         cbRouteCount.SelectedIndex--;
                     }
@@ -354,21 +354,24 @@ namespace CodeTrade.Pages
                         }
                     }
 
-                    int lastIndex = 0;
-                    if (cbRouteCount.SelectedIndex != 0)
+                    if (cbRouteCount.SelectedIndex - 1 <= amount)
                     {
-                        lastIndex = Deliveries.Count - cbRouteCount.SelectedIndex;
-                    }
+                        int lastIndex = 0;
+                        if (cbRouteCount.SelectedIndex != 0)
+                        {
+                            lastIndex = Deliveries.Count - (cbRouteCount.SelectedIndex - 1);
+                        }
 
-                    List<Data.Delivery> deliveries = new List<Data.Delivery>();
-                    for (int i = Deliveries.Count - 1; i >= lastIndex; i--)
-                    {
-                        deliveries.Add(Deliveries[i]);
-                    }
+                        List<Data.Delivery> deliveries = new List<Data.Delivery>();
+                        for (int i = Deliveries.Count - 1; i >= lastIndex; i--)
+                        {
+                            deliveries.Add(Deliveries[i]);
+                        }
 
-                    FillGraph(deliveries);
-                    FillDataSet();
-                    CalculateTotal();
+                        FillGraph(deliveries);
+                        FillDataSet();
+                        CalculateTotal();
+                    }
                 }
                 else if (cbRouteCount.SelectedIndex == 1)
                 {
