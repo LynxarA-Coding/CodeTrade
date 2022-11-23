@@ -120,7 +120,7 @@ namespace CodeTrade
                 {
                     pBar.Visible = false;
                     lblLoading.Visible = false;
-                    lblVersionOutdated.Text = language == 1 ? "Ваша версия программы устарела. Пожалуйста, обновите программу!" : "Your app version is outdated. Please update the program!";
+                    lblVersionOutdated.Text = language == 1 ? "Ваша версия программы устарела. Обновите программу!" : "Your app version is outdated. Update the program!";
                     lblVersionOutdated.Left = (this.Width - lblVersionOutdated.Width) / 2;
                     lblVersionOutdated.Top = (this.Height - lblVersionOutdated.Height) / 2 - 20;
                     loadTimer.Stop();

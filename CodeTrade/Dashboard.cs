@@ -244,5 +244,10 @@ namespace CodeTrade
                 OpenPage(2);
             }
         }
+
+        private void btnToggleMenu_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

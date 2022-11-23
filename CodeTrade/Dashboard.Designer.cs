@@ -161,6 +161,7 @@
             this.btnToggleMenu.Size = new System.Drawing.Size(36, 544);
             this.btnToggleMenu.TabIndex = 0;
             this.btnToggleMenu.Click += new System.EventHandler(this.btnToggleMenu_Click);
+            this.btnToggleMenu.Paint += new System.Windows.Forms.PaintEventHandler(this.btnToggleMenu_Paint);
             // 
             // btnMenuToggle
             // 

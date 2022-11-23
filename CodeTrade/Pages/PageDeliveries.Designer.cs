@@ -237,7 +237,7 @@
             this.tbBuyPlace.Name = "tbBuyPlace";
             this.tbBuyPlace.PasswordChar = '\0';
             this.tbBuyPlace.PlaceholderForeColor = System.Drawing.Color.Black;
-            this.tbBuyPlace.PlaceholderText = "Введите место покупки товара";
+            this.tbBuyPlace.PlaceholderText = "";
             this.tbBuyPlace.SelectedText = "";
             this.tbBuyPlace.ShadowDecoration.Parent = this.tbBuyPlace;
             this.tbBuyPlace.Size = new System.Drawing.Size(436, 35);
@@ -270,7 +270,7 @@
             this.tbSellPlace.Name = "tbSellPlace";
             this.tbSellPlace.PasswordChar = '\0';
             this.tbSellPlace.PlaceholderForeColor = System.Drawing.Color.Black;
-            this.tbSellPlace.PlaceholderText = "Введите место продажи товара";
+            this.tbSellPlace.PlaceholderText = "";
             this.tbSellPlace.SelectedText = "";
             this.tbSellPlace.ShadowDecoration.Parent = this.tbSellPlace;
             this.tbSellPlace.Size = new System.Drawing.Size(436, 35);
