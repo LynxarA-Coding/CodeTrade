@@ -296,6 +296,7 @@
             this.cbCargoName.BackColor = System.Drawing.Color.Transparent;
             this.cbCargoName.BorderColor = System.Drawing.Color.Black;
             this.cbCargoName.BorderThickness = 2;
+            this.cbCargoName.DisplayMember = "1";
             this.cbCargoName.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cbCargoName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbCargoName.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
@@ -344,6 +345,7 @@
             "Quartz",
             "Ranta Dung",
             "Red Fest. Env.",
+            "RMC",
             "Rev. Tree Pollen",
             "SLAM",
             "Scrap",

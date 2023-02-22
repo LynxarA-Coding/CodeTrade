@@ -65,7 +65,7 @@
             this.lblTag.Name = "lblTag";
             this.lblTag.Size = new System.Drawing.Size(153, 14);
             this.lblTag.TabIndex = 2;
-            this.lblTag.Text = "Release v 1.1.2 | by lynxara";
+            this.lblTag.Text = "Release v 1.1.3 | by lynxara";
             // 
             // lblTitle
             // 
