@@ -83,7 +83,7 @@
             this.lblCopyright.Name = "lblCopyright";
             this.lblCopyright.Size = new System.Drawing.Size(98, 39);
             this.lblCopyright.TabIndex = 0;
-            this.lblCopyright.Text = "by LynxarA @2022 \r\nDiscord: LynX#6969\r\nCODEGAMING Corp";
+            this.lblCopyright.Text = "by LynxarA @2023 \r\nDiscord: LynX#7844\r\nCODEGAMING Corp";
             // 
             // btnSettings
             // 
